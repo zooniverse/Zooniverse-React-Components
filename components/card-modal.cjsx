@@ -2,8 +2,8 @@
 
 React = require 'react'
 
-MiniTutorialCompoment = React.createClass
-  displayName: 'MiniTutorialCompoment'
+CardModalCompoment = React.createClass
+  displayName: 'CardModalCompoment'
 
   getInitialState: ->
     {
@@ -52,4 +52,4 @@ MiniTutorialCompoment = React.createClass
       </div>
     </div>
 
-module.exports = MiniTutorialCompoment
+module.exports = CardModalCompoment

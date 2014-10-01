@@ -2,7 +2,7 @@
 
 React = require 'react'
 {Router, Routes, Route, Link} = require 'react-router'
-MiniTutorialCompoment = require './mini-tutorial'
+CardModalCompoment = require './card-modal'
 # require components here:
 
 SampleComponent = React.createClass
@@ -29,7 +29,7 @@ SampleComponent = React.createClass
         <li><Link to="root">This will go nowhere....</Link></li>
         <li onClick={@handleOpenMiniTutorial}>Click this text to open Mini-tutorial</li>
       </ul>
-      {if @state.miniTutorialActive then <MiniTutorialCompoment slides={@state.slidesData} closeHandler={@handleCloseMiniTutorial} /> else null }
+      {if @state.miniTutorialActive then <CardModalCompoment slides={@state.slidesData} closeHandler={@handleCloseMiniTutorial} /> else null }
     </div>
 
 Main = React.createClass
