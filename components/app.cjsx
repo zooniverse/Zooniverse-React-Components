@@ -11,7 +11,7 @@ SampleComponent = React.createClass
   getInitialState: ->
     {
       slidesData: require '../lib/slides-data'
-      miniTutorialActive: true
+      miniTutorialActive: false
     }
 
   handleOpenMiniTutorial: ->
@@ -27,7 +27,7 @@ SampleComponent = React.createClass
       <p>Give them a route with name & path props and link to that path here:</p>
       <ul>
         <li><Link to="root">This will go nowhere....</Link></li>
-        <li onClick={@handleOpenMiniTutorial}>Open Mini-tutorial</li>
+        <li onClick={@handleOpenMiniTutorial}>Click this text to open Mini-tutorial</li>
       </ul>
       {if @state.miniTutorialActive then <MiniTutorialCompoment slides={@state.slidesData} closeHandler={@handleCloseMiniTutorial} /> else null }
     </div>
