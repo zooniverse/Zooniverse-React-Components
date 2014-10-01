@@ -1,4 +1,5 @@
 React = require 'react'
+TalkCommentList = require './comment_list'
 
 TalkSubject = React.createClass
   getInitialState: ->
@@ -17,6 +18,7 @@ TalkSubject = React.createClass
   render: ->
     <div className="talk-subject">
       <img src={@image()} />
+      <TalkCommentList focus={@state.subject} />
     </div>
 
 module.exports = TalkSubject
