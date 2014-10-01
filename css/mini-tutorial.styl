@@ -1,5 +1,5 @@
 // Ripped from CWW
-#small-tutorial
+.miniTutorial
   GREY = #8f8f8f
   TUTORIAL_MOBILE_WIDTH = 310
   TUTORIAL_MOBILE_HEIGHT = 470
@@ -18,6 +18,10 @@
   background-color TUTORIAL_UNDERLAY_COLOR
   user-select none
   z-index 1000
+  display none
+
+  &.show
+    display block
 
   .tutorial-slide
     border-radius 8px
