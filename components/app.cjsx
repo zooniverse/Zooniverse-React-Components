@@ -4,6 +4,8 @@ React = require 'react'
 {Router, Routes, Route, Link} = require 'react-router'
 # require components here:
 
+Talk = require './talk'
+
 SampleComponent = React.createClass
   displayName: 'SampleComponent'
 
@@ -14,6 +16,7 @@ SampleComponent = React.createClass
       <p>Give them a route with name & path props and link to that path here:</p>
       <ul>
         <li><Link to="root">This will go nowhere....</Link></li>
+        <li><Link to="talk">Talk</Link></li>
       </ul>
     </div>
 
@@ -21,6 +24,7 @@ Main = React.createClass
   render: ->
     <Routes>
       <Route path="/" name="root" handler={SampleComponent} />
+      <Route path="/talk" name="talk" handler={Talk} />
     </Routes>
 
 React.renderComponent Main(null), document.body
