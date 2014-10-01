@@ -1,6 +1,7 @@
 React = require 'react'
 
 TalkComment = require './comment'
+TalkCommentForm = require './comment_form'
 
 TalkCommentList = React.createClass
   getInitialState: ->
@@ -14,17 +15,19 @@ TalkCommentList = React.createClass
     @loadComments()
   
   comments: ->
-    # list = @state.discussion?.comments or []
-    
-    # Fake comments
-    list = if @state.discussion then require('./fake_comments') else []
+    list = @state.discussion?.comments or []
     
     list.map (comment) =>
       <TalkComment key={comment._id} comment={comment} />
   
+  newComment: (comment) ->
+    @state.discussion.comments.unshift comment
+    @setState discussion: @state.discussion
+  
   render: ->
     <ul className="talk-comment-list">
       {@comments()}
+      <TalkCommentForm focusId={@props.focus.zooniverse_id} onCommentSubmit={@newComment} />
     </ul>
 
 module.exports = TalkCommentList
