@@ -15,10 +15,16 @@ TalkSubject = React.createClass
   image: ->
     @state.subject?.location?.standard
   
+  commentList: ->
+    if @state.subject
+      <TalkCommentList focus={@state.subject} />
+    else
+      ''
+  
   render: ->
     <div className="talk-subject">
       <img src={@image()} />
-      <TalkCommentList focus={@state.subject} />
+      {@commentList()}
     </div>
 
 module.exports = TalkSubject
