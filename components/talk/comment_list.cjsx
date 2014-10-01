@@ -1,5 +1,7 @@
 React = require 'react'
 
+TalkComment = require './comment'
+
 TalkCommentList = React.createClass
   getInitialState: ->
     { discussion: null }
@@ -12,11 +14,18 @@ TalkCommentList = React.createClass
     # Loading the discussion from here doesn't work?
     # Apparently the component is only mounted before the subject is loaded
   
+  comments: ->
+    # list = @state.discussion?.comments or []
+    list = require './fake_comments'
+    
+    list.map (comment) =>
+      <TalkComment key={comment._id} comment={comment} />
+  
   render: ->
     # This seems really kludgey
     @loadComments() if @props.focus and not @state.discussion
-    <div className="talk-comment-list">
-      Comment list
-    </div>
+    <ul className="talk-comment-list">
+      {@comments()}
+    </ul>
 
 module.exports = TalkCommentList
