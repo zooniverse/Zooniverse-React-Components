@@ -1,9 +1,11 @@
+# @cjsx React.DOM
+
 React = require 'react'
 
 MiniTutorialCompoment = React.createClass
   displayName: 'MiniTutorialCompoment'
 
   render: ->
-    <div className="miniTutorial"></div>
+    <div className="miniTutorial">HELLO WORLD</div>
 
-window.React = React
+module.exports = MiniTutorialCompoment
