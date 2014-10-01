@@ -7,33 +7,26 @@ MiniTutorialCompoment = React.createClass
 
   getInitialState: ->
     {
-      active: false
       activeSlide: 0
     }
 
   render: ->
-    slides = {}
-
-    classes = "mini-tutorial"
-    classes += " active" if @props.active
-
-    @props.slides.forEach (slide, i) ->
-      slides["slide#{ i }"] = 
-        <div className="slide">
-          <div className="top-half">
-            <img src={slide.image} />
-          </div>
-          <div className="bottom-half">
-            <h1>{slide.title}</h1>
-            <p>{slide.content}</p>
-          </div>
+    slideNodes = @props.slides.map (slide) ->
+      <div key={slide.id} className="slide">
+        <div className="top-half">
+          <img src={slide.image} />
         </div>
+        <div className="bottom-half">
+          <h1>{slide.title}</h1>
+          <p>{slide.content}</p>
+        </div>
+      </div>
 
-    <div className={classes}>
+    <div className="mini-tutorial">
       <div className="tutorial-slide">
-        <button className="close">Close</button>
+        <button className="close" onClick={@props.closeHandler}>Close</button>
         <div className="slides-container">
-          { slides }
+          {slideNodes}
         </div>
       </div>
     </div>

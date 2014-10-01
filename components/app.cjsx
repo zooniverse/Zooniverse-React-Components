@@ -5,16 +5,20 @@ React = require 'react'
 MiniTutorialCompoment = require './mini-tutorial'
 # require components here:
 
-slidesData = require '../lib/slides-data'
-
 SampleComponent = React.createClass
   displayName: 'SampleComponent'
 
   getInitialState: ->
-    miniTutorialActive: false
+    {
+      slidesData: require '../lib/slides-data'
+      miniTutorialActive: true
+    }
 
   handleOpenMiniTutorial: ->
-    @setState {miniTutorialActive: true}
+    @setState miniTutorialActive: true
+
+  handleCloseMiniTutorial: ->
+    @setState miniTutorialActive: false
 
   render: ->
     <div className="sample-component">
@@ -25,7 +29,7 @@ SampleComponent = React.createClass
         <li><Link to="root">This will go nowhere....</Link></li>
         <li onClick={@handleOpenMiniTutorial}>Open Mini-tutorial</li>
       </ul>
-      <MiniTutorialCompoment slides={slidesData} active={@state.miniTutorialActive} />
+      {if @state.miniTutorialActive then <MiniTutorialCompoment slides={@state.slidesData} closeHandler={@handleCloseMiniTutorial} /> else null }
     </div>
 
 Main = React.createClass
