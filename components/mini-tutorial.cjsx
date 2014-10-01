@@ -13,10 +13,9 @@ MiniTutorialCompoment = React.createClass
 
   render: ->
     slides = {}
-    console.log @
 
     classes = "mini-tutorial"
-    classes += "active" if @state.active
+    classes += " active" if @props.active
 
     @props.slides.forEach (slide, i) ->
       slides["slide#{ i }"] = 
