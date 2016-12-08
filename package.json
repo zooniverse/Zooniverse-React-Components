@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Zooniverse-React-Components ===========================",
   "scripts": {
-    "start": "gulp"
+    "start": "echo 'Nothing to see here yet'"
   },
   "repository": {
     "type": "git",
