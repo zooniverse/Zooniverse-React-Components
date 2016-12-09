@@ -2,30 +2,29 @@ import React from 'react';
 import Select from 'react-select';
 import apiClient from 'panoptes-client/lib/api-client';
 
-
 export default class UserSearch extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.queryTimeout = NaN;
 
     this.state = {
       users: []
-    }
+    };
 
     this.searchUsers = this.searchUsers.bind(this);
-  }
-
-  delayBy(timeout, fn) {
-    return setTimeout(fn, timeout);
   }
 
   onChange(users) {
     this.setState({ users });
   }
 
+  delayBy(timeout, fn) {
+    return setTimeout(fn, timeout);
+  }
+
   searchUsers(value) {
-    clearTimeout(this.queryTimeout)
+    clearTimeout(this.queryTimeout);
     const onSearch = this.props.onSearch;
 
     if (value === '') {
@@ -41,14 +40,14 @@ export default class UserSearch extends React.Component {
         return apiClient.type('users').get({ search: value, page_size: 10 })
           .then((users) => {
             for (const user in users) {
-              return { 
+              return {
                 value: user.id,
                 label: `@${user.login}: ${user.display_name}`
               };
             }
           }).then((options) => {
             return resolve({ options });
-          }).catch((err) => { console.error(err) });
+          }).catch((err) => { console.error(err); });
       });
     });
   }
@@ -65,26 +64,26 @@ export default class UserSearch extends React.Component {
         className={this.props.className}
         closeAfterClick={true}
         matchProp={'label'}
-        loadOptions={this.searchUsers} 
+        loadOptions={this.searchUsers}
       />
     );
   }
 }
 
 UserSearch.propTypes = {
-  className: React.PropTypes.string
+  className: React.PropTypes.string,
   debounce: React.PropTypes.number,
   multi: React.PropTypes.bool,
   onSearch: React.PropTypes.func,
   placeholder: React.PropTypes.string,
-  searchPromptText: React.PropTypes.string,
-}
+  searchPromptText: React.PropTypes.string
+};
 
 UserSearch.defaultProps = {
-  className: 'search'
+  className: 'search',
   debounce: 200,
   multi: true,
   onSearch: null,
-  placeholder: 'Username:'
+  placeholder: 'Username:',
   searchPromptText: 'Type to search Users'
-}
+};
