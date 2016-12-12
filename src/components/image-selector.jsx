@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import toBlob from 'data-uri-to-blob';
+import FileButton from './file-button';
+import MediaIcon from './media-icon';
 
 const BASE_64_EXPANSION = 3 / 4;
 
@@ -15,32 +17,32 @@ export default class ImageSelector extends React.Component {
     }
   }
 
-  componentDidMount() {
-    addEventListener('resize', this.updateWidth)
-    this.updateWidth()
-  }
+  // componentDidMount() {
+  //   addEventListener('resize', this.updateWidth)
+  //   this.updateWidth()
+  // }
 
-  componentWillUnmount() {
-    removeEventListener('resize', this.updateWidth)
-  }
+  // componentWillUnmount() {
+  //   removeEventListener('resize', this.updateWidth)
+  // }
 
-  updateWidth() {
-    const imageSelectorPreviews = this.imgPreview;
+  // updateWidth() {
+  //   const imageSelectorPreviews = this.imgPreview;
 
-    for (const img in imageSelectorPreviews) {
-      img.dataset.displayWas = img.style.display;
-      img.style.display = 'none'
-    }
+  //   for (const img in imageSelectorPreviews) {
+  //     img.dataset.displayWas = img.style.display;
+  //     img.style.display = 'none'
+  //   }
 
-    this.setState({ rootWidth: NaN }, () => {
-      this.setState({ rootWidth: ReactDOM.findDOMNode(this).clientWidth })
+  //   this.setState({ rootWidth: NaN }, () => {
+  //     this.setState({ rootWidth: ReactDOM.findDOMNode(this).clientWidth })
 
-      for (const img in imageSelectorPreviews) {
-        img.style.display = img.dataset.displayWas;
-        delete img.dataset.displayWas;
-      }
-    });
-  }
+  //     for (const img in imageSelectorPreviews) {
+  //       img.style.display = img.dataset.displayWas;
+  //       delete img.dataset.displayWas;
+  //     }
+  //   });
+  // }
 
   handleChange(e) {
     if (e.target.files.length !== 0) {
@@ -108,7 +110,8 @@ export default class ImageSelector extends React.Component {
         img.title = srcFile.name;
         this.props.onChange(toBlob(dataURL), img);
       }
-    } catch {
+    }
+    catch {
       this.setState({ working: false, error: 'Error reducing image. Try a smaller one.' });
     }
   }
@@ -116,16 +119,8 @@ export default class ImageSelector extends React.Component {
   render() {
     let imgPreview = this.props.placeholder;
 
-    if (this.props.src) {
-      imgPreview = 
-        <img
-          ref={(img) => { this.imgPrevew = img; }} 
-          src={this.props.src} 
-          style={{
-            display: 'block',
-            maxWidth: '100%'
-          }}
-        />
+    if (this.props.resource) {
+      imgPreview = <MediaIcon resource={this.props.resource} />
     }
 
     const errorMessage = this.state.error ? <span>{this.state.error}</span> : null;
@@ -142,16 +137,21 @@ export default class ImageSelector extends React.Component {
     return (
       <div  style={imageSelectorStyles}>
         {imgPreview}
-        {errorMessage}
-        <input type="file" accept={this.props.accept} disabled={this.state.working} style={{
-          cursor: 'pointer',
-          height: '100%',
-          left: 0,
-          position: 'absolute',
-          opacity: 0,
-          top: 0,
-          width: '100%',
-        }} onChange={this.handleChange} />
+        <span>{errorMessage}</span>
+        <FileButton
+          accept={this.props.accept}
+          disabled={this.state.working}
+          style={{
+            cursor: 'pointer',
+            height: '100%',
+            left: 0,
+            position: 'absolute',
+            opacity: 0,
+            top: 0,
+            width: '100%'
+          }}
+          onSelect={this.handleChange}
+        />
 
         {if (this.state.working) {
           <span style={{
@@ -177,7 +177,7 @@ ImageSelector.defaultProps = {
   placeholder: '',
   ratio: NaN, // Width / height
   reductionPerPass: 0.05,
-  src: '',
+  resource: null,
 };
 
 ImageSelector.propTypes = {
@@ -189,5 +189,7 @@ ImageSelector.propTypes = {
   placeholder: React.PropTypes.string,
   ratio: React.PropTypes.number,
   reductionPerPass: React.PropTypes.number,
-  src: React.PropTypes.string.isRequired,
+  resource: React.PropTypes.shape({
+    src: React.PropTypes.string,
+  }).isRequired,
 };

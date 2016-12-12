@@ -4,6 +4,7 @@
   "description": "Zooniverse-React-Components ===========================",
   "scripts": {
     "start": "echo 'Nothing to see here yet'",
+    "build": "babel src --out-dir lib",
     "lint": "eslint src"
   },
   "repository": {
