@@ -14,7 +14,7 @@ export default class ImageSelector extends React.Component {
       error: null,
       rootWidth: NaN,
       working: false
-    }
+    };
   }
 
   // componentDidMount() {
@@ -44,19 +44,19 @@ export default class ImageSelector extends React.Component {
   //   });
   // }
 
-  handleChange(e) {
-    if (e.target.files.length !== 0) {
-      const [file] = e.target.files;
-      this.setState({ error: null, working: true })
+  handleChange(event) {
+    if (event.target.files.length !== 0) {
+      const [file] = event.target.files;
+      this.setState({ error: null, working: true });
 
-      const reader = new FileReader
+      const reader = new FileReader();
       reader.onload = (e) => {
-        const img = new Image
+        const img = new Image();
         img.onload = () => {
           return this.cropImage(img, file);
-        }
+        };
         img.src = e.target.result;
-      }
+      };
 
       return reader.readAsDataURL(file);
     }
@@ -81,15 +81,15 @@ export default class ImageSelector extends React.Component {
     const ctx = canvas.getContext('2d');
     ctx.drawImage(srcImg, (srcImg.naturalWidth - canvas.width) / -2, (srcImg.naturalHeight - canvas.height) / -2);
 
-    const croppedImg = new Image;
+    const croppedImg = new Image();
     croppedImg.onload = () => {
-      this.reduceImage(croppedImg, srcFile)
-    }
+      this.reduceImage(croppedImg, srcFile);
+    };
     croppedImg.src = canvas.toDataURL();
   }
 
   reduceImage(img, srcFile, _scale = 1) {
-    const canvas = document.createElement('canvas')
+    const canvas = document.createElement('canvas');
     canvas.width = img.naturalWidth * _scale;
     canvas.height = img.naturalHeight * _scale;
 
@@ -103,7 +103,7 @@ export default class ImageSelector extends React.Component {
 
       if (size > this.props.maxSize && canvas.width * canvas.height > this.props.minArea) {
         // Keep trying until it's small enough.
-        this.reduceImage(img, srcFile, _scale - this.props.reductionPerPass)
+        this.reduceImage(img, srcFile, _scale - this.props.reductionPerPass);
       } else {
         this.setState({ working: false });
 
@@ -111,19 +111,25 @@ export default class ImageSelector extends React.Component {
         this.props.onChange(toBlob(dataURL), img);
       }
     }
-    catch {
+    catch (e) {
       this.setState({ working: false, error: 'Error reducing image. Try a smaller one.' });
     }
   }
 
   render() {
-    let imgPreview = this.props.placeholder;
-
-    if (this.props.resource) {
-      imgPreview = <MediaIcon resource={this.props.resource} />
-    }
-
     const errorMessage = this.state.error ? <span>{this.state.error}</span> : null;
+    const loading =
+      (<span
+        style={{
+          fontSize: '2em',
+          left: '50%',
+          position: 'absolute',
+          top: '50%',
+          transform: 'translate(-50%, -50%)'
+        }}
+      >
+        {this.props.loadingIndicator || 'Loading...'}
+      </span>);
 
     const imageSelectorStyles = {
       background: 'rgba(gray, 0.2)',
@@ -131,12 +137,12 @@ export default class ImageSelector extends React.Component {
       borderRadius: '5px',
       overflow: 'hidden',
       position: 'relative',
-      width: this.state.rootWidth || 'auto',
+      width: this.state.rootWidth || 'auto'
     };
 
     return (
-      <div  style={imageSelectorStyles}>
-        {imgPreview}
+      <div style={imageSelectorStyles}>
+        {this.props.resource ? <MediaIcon resource={this.props.resource} /> : this.props.placeholder}
         <span>{errorMessage}</span>
         <FileButton
           accept={this.props.accept}
@@ -153,16 +159,7 @@ export default class ImageSelector extends React.Component {
           onSelect={this.handleChange}
         />
 
-        {if (this.state.working) {
-          <span style={{
-            fontSize: '2em',
-            left: '50%',
-            position: 'absolute',
-            top: '50%',
-            transform: 'translate(-50%, -50%)',
-          }}>
-            {this.props.loadingIndicator || 'Loading...'}
-          </span>}}
+        {(this.state.working) ? loading : null}
       </div>
     );
   }
@@ -177,7 +174,7 @@ ImageSelector.defaultProps = {
   placeholder: '',
   ratio: NaN, // Width / height
   reductionPerPass: 0.05,
-  resource: null,
+  resource: null
 };
 
 ImageSelector.propTypes = {
@@ -190,6 +187,6 @@ ImageSelector.propTypes = {
   ratio: React.PropTypes.number,
   reductionPerPass: React.PropTypes.number,
   resource: React.PropTypes.shape({
-    src: React.PropTypes.string,
-  }).isRequired,
+    src: React.PropTypes.string
+  }).isRequired
 };
