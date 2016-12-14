@@ -30,15 +30,15 @@ export default class FileButton extends React.Component {
       input = <input type="file" {...passedProps} style={this.props.inputStyle} onChange={this.handleChange} />;
     }
 
-    const style = Object.assign({}, this.props.rootStyle, this.props.style, {
-      'data-accept': this.props.accept,
-      'data-disabled': this.props.disabled || null,
-      'data-multiple': this.props.multiple || null
+    const props = Object.assign({}, this.props.rootStyle, this.props.style, {
+      dataAccept: this.props.accept,
+      dataDisabled: this.props.disabled || null,
+      dataMultiple: this.props.multiple || null
     });
 
     return (
       React.createElement(this.props.tag,
-        { className: `file-button ${this.props.className}`.trim(), style },
+        { className: `file-button ${this.props.className}`.trim(), props },
         <span style={this.props.containerStyle}>{input}</span>,
         this.props.children
       )

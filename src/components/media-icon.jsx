@@ -1,13 +1,13 @@
 import React from 'react';
 import TriggeredModalForm from 'modal-form/triggered';
-import Thumbnail from './thumbnail';
+import Thumbnail from '../../../components/thumbnail';
 
 export default class MediaIcon extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      deleting: false
+      deleting: false,
     };
 
     this.handleDelete = this.handleDelete.bind(this);
@@ -22,13 +22,9 @@ export default class MediaIcon extends React.Component {
     });
   }
 
-  handleMarkdownFocus(e) {
-    return (e.target.setSelectionRange(0, e.target.value.length));
-  }
-
   render() {
     const mediaIconStyle = this.state.deleting ? { opacity: 0.5 } : null;
-    const markdown = `![${this.props.resource.metadata.filename}(${this.props.resource.src})`;
+
     return (
       <div className="media-icon" style={mediaIconStyle}>
         <div className="media-icon-thumbnail-container">
@@ -42,7 +38,14 @@ export default class MediaIcon extends React.Component {
           <button type="button" className="media-icon-delete-button" disabled={this.state.deleting} onClick={this.handleDelete}>&times;</button>
         </div>
         <div className="media-icon-label" style={{ position: 'relative' }}>{this.props.resource.metadata.filename}</div>
-        <textarea className="media-icon-markdown" value={markdown} readOnly style={{ position: 'relative' }} onFocus={this.handleMarkdownFocus} />
+        {this.props.resource.metadata &&
+          <textarea
+            className="media-icon-markdown"
+            value={`![${this.props.resource.metadata.filename}(${this.props.resource.src})`}
+            readOnly
+            style={{ position: 'relative' }}
+            onFocus={(e) => { return (e.target.setSelectionRange(0, e.target.value.length)); }}
+          />}
       </div>
     );
   }
@@ -51,7 +54,7 @@ export default class MediaIcon extends React.Component {
 MediaIcon.defaultProps = {
   height: 80,
   onDelete: () => {},
-  resource: null
+  resource: null,
 };
 
 MediaIcon.propTypes = {
@@ -61,6 +64,6 @@ MediaIcon.propTypes = {
     delete: React.PropTypes.func,
     id: React.PropTypes.string,
     metadata: React.PropTypes.object,
-    src: React.PropTypes.string
-  })
+    src: React.PropTypes.string,
+  }),
 };

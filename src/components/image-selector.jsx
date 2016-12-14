@@ -183,7 +183,7 @@ ImageSelector.propTypes = {
   maxSize: React.PropTypes.number,
   minArea: React.PropTypes.number,
   onChange: React.PropTypes.func,
-  placeholder: React.PropTypes.string,
+  placeholder: React.PropTypes.node,
   ratio: React.PropTypes.number,
   reductionPerPass: React.PropTypes.number,
   resource: React.PropTypes.shape({
