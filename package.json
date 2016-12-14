@@ -6,7 +6,7 @@
   "scripts": {
     "start": "echo 'Nothing to see here yet'",
     "build": "babel src --out-dir lib",
-    "test": "mocha --compilers js:babel-register --require test/setup.js test/*-test.js",
+    "test": "mocha --reporter nyan --compilers js:babel-register --require test/setup.js test/*-test.js",
     "lint": "eslint src"
   },
   "repository": {
@@ -31,7 +31,10 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.8.0",
-    "mocha": "^3.2.0"
+    "jsdom": "^9.8.3",
+    "mocha": "^3.2.0",
+    "react-addons-test-utils": "^15.4.1",
+    "sinon": "^1.17.6"
   },
   "dependencies": {
     "panoptes-client": "^2.5.2",
