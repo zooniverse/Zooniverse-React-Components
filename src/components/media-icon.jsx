@@ -1,13 +1,13 @@
 import React from 'react';
 import TriggeredModalForm from 'modal-form/triggered';
-import Thumbnail from '../../../components/thumbnail';
+import Thumbnail from './thumbnail';
 
 export default class MediaIcon extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      deleting: false,
+      deleting: false
     };
 
     this.handleDelete = this.handleDelete.bind(this);
@@ -37,15 +37,17 @@ export default class MediaIcon extends React.Component {
           </TriggeredModalForm>
           <button type="button" className="media-icon-delete-button" disabled={this.state.deleting} onClick={this.handleDelete}>&times;</button>
         </div>
-        <div className="media-icon-label" style={{ position: 'relative' }}>{this.props.resource.metadata.filename}</div>
         {this.props.resource.metadata &&
-          <textarea
-            className="media-icon-markdown"
-            value={`![${this.props.resource.metadata.filename}(${this.props.resource.src})`}
-            readOnly
-            style={{ position: 'relative' }}
-            onFocus={(e) => { return (e.target.setSelectionRange(0, e.target.value.length)); }}
-          />}
+          <div>
+            <span className="media-icon-label" style={{ position: 'relative' }}>{this.props.resource.metadata.filename}</span>
+            <textarea
+              className="media-icon-markdown"
+              value={`![${this.props.resource.metadata.filename}(${this.props.resource.src})`}
+              readOnly
+              style={{ position: 'relative' }}
+              onFocus={e => e.target.setSelectionRange(0, e.target.value.length)}
+            />
+          </div>}
       </div>
     );
   }
@@ -54,7 +56,7 @@ export default class MediaIcon extends React.Component {
 MediaIcon.defaultProps = {
   height: 80,
   onDelete: () => {},
-  resource: null,
+  resource: {}
 };
 
 MediaIcon.propTypes = {
@@ -64,6 +66,6 @@ MediaIcon.propTypes = {
     delete: React.PropTypes.func,
     id: React.PropTypes.string,
     metadata: React.PropTypes.object,
-    src: React.PropTypes.string,
-  }),
+    src: React.PropTypes.string
+  }).isRequired
 };
