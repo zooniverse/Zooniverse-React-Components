@@ -6,7 +6,7 @@
   "scripts": {
     "start": "echo 'Nothing to see here yet'",
     "build": "babel src --out-dir lib",
-    "test": "mocha --reporter nyan --compilers js:babel-register --require test/setup.js test/*-test.js",
+    "test": "mocha --reporter nyan --compilers js:babel-register --require test/setup.js test/*.test.js",
     "lint": "eslint src"
   },
   "repository": {
