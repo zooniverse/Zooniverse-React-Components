@@ -38,6 +38,7 @@
     "stylus": "^0.54.5"
   },
   "dependencies": {
+    "modal-form": "^2.4.3",
     "panoptes-client": "^2.5.2",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
