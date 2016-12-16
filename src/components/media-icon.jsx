@@ -14,7 +14,6 @@ export default class MediaIcon extends React.Component {
   }
 
   handleDelete() {
-    console.log(`Deleting media resource ${this.props.resource.id}`);
     this.setState({ deleting: true });
     this.props.resource.delete().then(() => {
       this.setState({ deleting: false });
@@ -46,7 +45,7 @@ export default class MediaIcon extends React.Component {
             <textarea
               className="media-icon-markdown"
               value={`![${this.props.resource.metadata.filename}(${this.props.resource.src})`}
-              readOnly
+              readOnly={true}
               style={{ position: 'relative' }}
               onFocus={e => e.target.setSelectionRange(0, e.target.value.length)}
             />

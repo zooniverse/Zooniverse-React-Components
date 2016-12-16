@@ -11,13 +11,13 @@ const RESOURCE_WITH_METADATA = {
   delete: () => (new Promise((resolve) => { resolve(true); })),
   id: '1',
   metadata: { filename: 'kitty.jpg' },
-  src: 'http://placekitten.com/200/300'
+  src: 'http://placekitten.com/200/300',
 };
 
 const RESOURCE_WITHOUT_METADATA = {
   delete: () => (new Promise((resolve) => { resolve(true); })),
   id: '1',
-  src: 'http://placekitten.com/200/300'
+  src: 'http://placekitten.com/200/300',
 };
 
 describe('MediaIcon', function() {
@@ -53,7 +53,12 @@ describe('MediaIcon', function() {
       const onDelete = sinon.spy();
       const wrapper = mount(<MediaIcon resource={RESOURCE_WITH_METADATA} onDelete={onDelete} />);
       wrapper.find('.media-icon-delete-button').simulate('click');
-      expect(onDelete.calledOnce).to.equal(true);
+
+      // wait a little time for the event handling inside MediaIcon, or else
+      // we'll check to see if the function has been called too soon
+      setTimeout(() =>
+        expect(onDelete.calledOnce).to.equal(true),
+      100);
     });
   });
 });
