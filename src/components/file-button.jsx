@@ -5,18 +5,18 @@ export default class FileButton extends React.Component {
     super(props);
 
     this.state = {
-      resetting: false
+      resetting: false,
     };
   }
 
   componentDidUpdate() {
     if (this.state.resetting) {
-      this.setState({ resetting: false });
+      this.setState({ resetting: false }); // eslint-disable-line react/no-did-update-set-state
     }
   }
 
-  handleChange() {
-    this.props.onSelect(...arguments);
+  handleChange(...args) {
+    this.props.onSelect(args);
     this.setState({ resetting: true });
   }
 
@@ -33,7 +33,7 @@ export default class FileButton extends React.Component {
     const props = Object.assign({}, this.props.rootStyle, this.props.style, {
       dataAccept: this.props.accept,
       dataDisabled: this.props.disabled || null,
-      dataMultiple: this.props.multiple || null
+      dataMultiple: this.props.multiple || null,
     });
 
     return (
@@ -57,7 +57,7 @@ FileButton.defaultProps = {
     overflow: 'hidden',
     position: 'absolute',
     top: 0,
-    width: '100%'
+    width: '100%',
   },
   disabled: false,
   inputStyle: {
@@ -67,26 +67,26 @@ FileButton.defaultProps = {
     opacity: 0.01,
     position: 'absolute',
     top: '-100%',
-    width: '300%'
+    width: '300%',
   },
   multiple: false,
   onSelect: () => {},
   rootStyle: { position: 'relative' },
   style: {},
-  tag: 'label'
+  tag: 'label',
 };
 
 FileButton.propTypes = {
   accept: React.PropTypes.string,
   children: React.PropTypes.node,
   className: React.PropTypes.string,
-  containerStyle: React.PropTypes.object,
+  containerStyle: React.PropTypes.object, // eslint-disable-line react/forbid-prop-types
   disabled: React.PropTypes.bool,
-  inputStyle: React.PropTypes.object,
+  inputStyle: React.PropTypes.object, // eslint-disable-line react/forbid-prop-types
   multiple: React.PropTypes.bool,
   onSelect: React.PropTypes.func,
-  rootStyle: React.PropTypes.object,
-  style: React.PropTypes.object,
-  tag: React.PropTypes.string
+  rootStyle: React.PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  style: React.PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  tag: React.PropTypes.string,
 };
 

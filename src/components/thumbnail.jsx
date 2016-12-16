@@ -13,7 +13,7 @@ export default class Thumbnail extends React.Component {
     this.handleError = this.handleError.bind(this);
   }
 
-  getThumbnailSrc({ origin, width, height, src }) {
+  getThumbnailSrc({ origin, width, height, src }) { // eslint-disable-line class-methods-use-this
     const srcPath = src.split('//').pop();
     return (`${origin}/${width}x${height}/${srcPath}`);
   }
@@ -64,7 +64,7 @@ Thumbnail.defaultProps = {
 Thumbnail.propTypes = {
   format: React.PropTypes.string,
   height: React.PropTypes.number,
-  origin: React.PropTypes.string,
+  origin: React.PropTypes.string, // eslint-disable-line react/forbid-prop-types, react/no-unused-prop-types
   src: React.PropTypes.string,
   width: React.PropTypes.number,
 };

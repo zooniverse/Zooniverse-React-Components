@@ -1,6 +1,11 @@
-import DragAndDropTarget from '../src/components/drag-and-drop-target';
-import { shallow, mount, render } from 'enzyme';
+/* global expect */
+/* eslint-env browser, mocha */
+/* eslint-disable func-names, prefer-arrow-callback */
+/* eslint import/no-extraneous-dependencies: ["error", { "devDependencies": true  }] */
+import { mount } from 'enzyme';
+import React from 'react';
 import sinon from 'sinon';
+import DragAndDropTarget from '../src/components/drag-and-drop-target';
 
 describe('DragAndDropTarget', function() {
   it('mounts DragAndDropTarget', function() {
@@ -9,7 +14,7 @@ describe('DragAndDropTarget', function() {
   });
 
   it('renders children', function() {
-    const wrapper = mount(<DragAndDropTarget><span></span></DragAndDropTarget>);
+    const wrapper = mount(<DragAndDropTarget><span /></DragAndDropTarget>);
     expect(wrapper.children('span')).to.have.length(1);
   });
 

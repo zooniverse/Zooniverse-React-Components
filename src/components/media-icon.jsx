@@ -7,7 +7,7 @@ export default class MediaIcon extends React.Component {
     super(props);
 
     this.state = {
-      deleting: false
+      deleting: false,
     };
 
     this.handleDelete = this.handleDelete.bind(this);
@@ -22,15 +22,18 @@ export default class MediaIcon extends React.Component {
     });
   }
 
+  /* eslint-disable max-len */
   render() {
     const mediaIconStyle = this.state.deleting ? { opacity: 0.5 } : null;
 
     return (
       <div className="media-icon" style={mediaIconStyle}>
         <div className="media-icon-thumbnail-container">
-          <TriggeredModalForm trigger={
-            <Thumbnail className="media-icon-thumbnail" src={this.props.resource.src} height={this.props.height} style={{ position: 'relative' }} />
-          }>
+          <TriggeredModalForm
+            trigger={
+              <Thumbnail className="media-icon-thumbnail" src={this.props.resource.src} height={this.props.height} style={{ position: 'relative' }} />
+            }
+          >
             <div className="content-container">
               <img alt="" src={this.props.resource.src} style={{ maxHeight: '80vh', maxWidth: '60vw' }} />
             </div>
@@ -51,12 +54,13 @@ export default class MediaIcon extends React.Component {
       </div>
     );
   }
+  /* eslint-enable */
 }
 
 MediaIcon.defaultProps = {
   height: 80,
   onDelete: () => {},
-  resource: {}
+  resource: {},
 };
 
 MediaIcon.propTypes = {
@@ -66,6 +70,6 @@ MediaIcon.propTypes = {
     delete: React.PropTypes.func,
     id: React.PropTypes.string,
     metadata: React.PropTypes.object,
-    src: React.PropTypes.string
-  }).isRequired
+    src: React.PropTypes.string,
+  }).isRequired,
 };

@@ -1,6 +1,8 @@
+/* eslint-env browser, mocha */
+/* eslint import/no-extraneous-dependencies: ["error", { "devDependencies": true  }] */
 import React from 'react';
 import chai from 'chai';
-import {jsdom} from 'jsdom';
+import { jsdom } from 'jsdom';
 
 // Set up fake DOM for use by Enzyme's mount() method.
 const exposedProperties = ['window', 'navigator', 'document'];

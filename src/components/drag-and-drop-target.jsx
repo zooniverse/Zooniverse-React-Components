@@ -14,26 +14,26 @@ export default class DragAndDropTarget extends React.Component {
     this.handleDrop = this.handleDrop.bind(this);
   }
 
-  handleDragEnter(e) {
+  handleDragEnter(e, ...args) {
     e.preventDefault();
     this.setState({ canDrop: true });
-    this.props.onDragEnter(...arguments);
+    this.props.onDragEnter(args);
   }
 
-  handleDragOver(e) {
+  handleDragOver(e, ...args) {
     e.preventDefault();
-    this.props.onDragOver(...arguments);
+    this.props.onDragOver(args);
   }
 
-  handleDragLeave(e) {
+  handleDragLeave(e, ...args) {
     e.preventDefault();
-    this.props.onDragLeave(...arguments);
+    this.props.onDragLeave(args);
   }
 
-  handleDrop(e) {
+  handleDrop(e, ...args) {
     e.preventDefault();
     this.setState({ canDrop: false });
-    this.props.onDrop(...arguments);
+    this.props.onDrop(args);
   }
 
   render() {

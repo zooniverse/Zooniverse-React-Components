@@ -9,7 +9,7 @@ export default class UserSearch extends React.Component {
     this.queryTimeout = NaN;
 
     this.state = {
-      users: []
+      users: [],
     };
 
     this.searchUsers = this.searchUsers.bind(this);
@@ -19,7 +19,7 @@ export default class UserSearch extends React.Component {
     this.setState({ users });
   }
 
-  delayBy(timeout, fn) {
+  delayBy(timeout, fn) { // eslint-disable-line class-methods-use-this
     return setTimeout(fn, timeout);
   }
 
@@ -32,22 +32,24 @@ export default class UserSearch extends React.Component {
     }
 
     return new Promise((resolve) => {
-      this.queryTimeout = delayBy(this.props.debounce, () => {
+      this.queryTimeout = this.delayBy(this.props.debounce, () => {
         if (onSearch) {
           onSearch();
         }
 
         return apiClient.type('users').get({ search: value, page_size: 10 })
           .then((users) => {
+            // TODO: looks like this will only match the first result in the page
+            // shouldn't we use map or something like that instead?
             for (const user in users) {
               return {
                 value: user.id,
-                label: `@${user.login}: ${user.display_name}`
+                label: `@${user.login}: ${user.display_name}`,
               };
             }
-          }).then((options) => {
-            return resolve({ options });
-          }).catch((err) => { console.error(err); });
+          })
+          .then(options => resolve({ options }))
+          .catch((err) => { console.error(err); });
       });
     });
   }
@@ -76,7 +78,7 @@ UserSearch.propTypes = {
   multi: React.PropTypes.bool,
   onSearch: React.PropTypes.func,
   placeholder: React.PropTypes.string,
-  searchPromptText: React.PropTypes.string
+  searchPromptText: React.PropTypes.string,
 };
 
 UserSearch.defaultProps = {
@@ -85,5 +87,5 @@ UserSearch.defaultProps = {
   multi: true,
   onSearch: null,
   placeholder: 'Username:',
-  searchPromptText: 'Type to search Users'
+  searchPromptText: 'Type to search Users',
 };

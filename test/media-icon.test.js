@@ -1,16 +1,21 @@
-import MediaIcon from '../src/components/media-icon';
-import { shallow, mount, render } from 'enzyme';
+/* global expect */
+/* eslint-env browser, mocha */
+/* eslint-disable func-names, prefer-arrow-callback */
+/* eslint import/no-extraneous-dependencies: ["error", { "devDependencies": true  }] */
+import { mount, render } from 'enzyme';
+import React from 'react';
 import sinon from 'sinon';
+import MediaIcon from '../src/components/media-icon';
 
 const RESOURCE_WITH_METADATA = {
-  delete: () => { return new Promise((resolve) => { resolve(true); }); },
+  delete: () => (new Promise((resolve) => { resolve(true); })),
   id: '1',
   metadata: { filename: 'kitty.jpg' },
   src: 'http://placekitten.com/200/300'
 };
 
 const RESOURCE_WITHOUT_METADATA = {
-  delete: () => { return new Promise((resolve) => { resolve(true); }); },
+  delete: () => (new Promise((resolve) => { resolve(true); })),
   id: '1',
   src: 'http://placekitten.com/200/300'
 };
