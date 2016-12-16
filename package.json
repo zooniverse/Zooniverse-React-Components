@@ -34,7 +34,8 @@
     "jsdom": "^9.8.3",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.1",
-    "sinon": "^1.17.6"
+    "sinon": "^1.17.6",
+    "stylus": "^0.54.5"
   },
   "dependencies": {
     "panoptes-client": "^2.5.2",
