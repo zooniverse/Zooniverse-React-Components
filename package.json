@@ -40,6 +40,7 @@
     "stylus": "^0.54.5"
   },
   "dependencies": {
+    "data-uri-to-blob": "0.0.4",
     "modal-form": "^2.4.3",
     "panoptes-client": "^2.5.2",
     "react": "^15.4.1",
