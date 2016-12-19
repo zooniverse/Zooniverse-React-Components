@@ -63,10 +63,12 @@
   white-space: pre;
   width: 100%;
 }
-.file-drop-target {
+
+.drag-and-drop-target {
   border: 2px dashed transparent;
   border-radius: 3px;
 }
-.file-drop-target[data-can-drop] {
+
+.drag-and-drop-target[data-can-drop] {
   border-color: #43bbfd;
 }

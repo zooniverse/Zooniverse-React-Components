@@ -37,7 +37,7 @@ export default class DragAndDropTarget extends React.Component {
   }
 
   render() {
-    const className = `file-drop-target ${this.props.className}`.trim();
+    const className = `drag-and-drop-target ${this.props.className}`.trim();
     return (
       <div
         {...this.props}
