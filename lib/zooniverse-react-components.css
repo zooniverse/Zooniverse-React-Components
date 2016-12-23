@@ -68,5 +68,5 @@
   border-radius: 3px;
 }
 .file-drop-target[data-can-drop] {
-  border-color: MAIN_HIGHLIGHT;
+  border-color: #43bbfd;
 }
