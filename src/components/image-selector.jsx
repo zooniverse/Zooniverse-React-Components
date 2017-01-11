@@ -12,37 +12,9 @@ export default class ImageSelector extends React.Component {
 
     this.state = {
       error: null,
-      rootWidth: NaN,
       working: false,
     };
   }
-
-  // componentDidMount() {
-  //   addEventListener('resize', this.updateWidth);
-  //   this.updateWidth();
-  // }
-
-  // componentWillUnmount() {
-  //   removeEventListener('resize', this.updateWidth);
-  // }
-
-  // updateWidth() {
-  //   const imageSelectorPreviews = this.imgPreview;
-
-  //   for (const img in imageSelectorPreviews) {
-  //     img.dataset.displayWas = img.style.display;
-  //     img.style.display = 'none';
-  //   }
-
-  //   this.setState({ rootWidth: NaN }, () => {
-  //     this.setState({ rootWidth: this.node.clientWidth });
-
-  //     for (const img in imageSelectorPreviews) {
-  //       img.style.display = img.dataset.displayWas;
-  //       delete img.dataset.displayWas;
-  //     }
-  //   });
-  // }
 
   handleChange(event) {
     if (event.target.files.length !== 0) {
@@ -131,14 +103,10 @@ export default class ImageSelector extends React.Component {
         {this.props.loadingIndicator || 'Loading...'}
       </span>);
 
-    const imageSelectorStyles = Object.assign(
-      {}, this.props.imageSelectorStyles, { width: this.state.rootWidth || 'auto' }
-    );
-
     const mediaIcon = <MediaIcon resource={this.props.resource} />;
 
     return (
-      <div style={imageSelectorStyles}>
+      <div style={this.props.imageSelectorStyles}>
         {this.props.resource ? mediaIcon : this.props.placeholder}
         <span>{errorMessage}</span>
         <FileButton
@@ -170,6 +138,7 @@ ImageSelector.defaultProps = {
     border: '1px solid rgba(gray, 0.4)',
     borderRadius: '5px',
     position: 'relative',
+    width: 'auto',
   },
   loadingIndicator: null,
   maxSize: Infinity, // In bytes
