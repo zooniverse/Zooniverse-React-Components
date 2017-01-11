@@ -70,5 +70,5 @@ MediaIcon.propTypes = {
     id: React.PropTypes.string,
     metadata: React.PropTypes.object,
     src: React.PropTypes.string,
-  }).isRequired,
+  }),
 };

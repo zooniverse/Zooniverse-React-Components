@@ -7,6 +7,8 @@ export default class FileButton extends React.Component {
     this.state = {
       resetting: false,
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidUpdate() {

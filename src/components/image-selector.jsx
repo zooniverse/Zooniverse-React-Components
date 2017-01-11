@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import toBlob from 'data-uri-to-blob';
 import FileButton from './file-button';
 import MediaIcon from './media-icon';
@@ -14,6 +13,10 @@ export default class ImageSelector extends React.Component {
       error: null,
       working: false,
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.cropImage = this.cropImage.bind(this);
+    this.reduceImage = this.reduceImage.bind(this);
   }
 
   handleChange(event) {
@@ -89,6 +92,14 @@ export default class ImageSelector extends React.Component {
   }
 
   render() {
+    let imageSelectorStyles = this.props.imageSelectorStyles;
+
+    if (this.props.resource) {
+      imageSelectorStyles = Object.assign(
+        {}, this.props.imageSelectorStyles, { background: 'transparent', border: 'none' }
+      );
+    }
+
     const errorMessage = this.state.error ? <span>{this.state.error}</span> : null;
     const loading =
       (<span
@@ -104,18 +115,19 @@ export default class ImageSelector extends React.Component {
       </span>);
 
     const mediaIcon = <MediaIcon resource={this.props.resource} />;
+    const fileButton = (<FileButton
+      accept={this.props.accept}
+      disabled={this.state.working}
+      style={this.props.fileButtonStyles}
+      onSelect={this.handleChange}
+    />);
 
     return (
-      <div style={this.props.imageSelectorStyles}>
+      <div style={imageSelectorStyles}>
         {this.props.resource ? mediaIcon : this.props.placeholder}
         <span>{errorMessage}</span>
-        <FileButton
-          accept={this.props.accept}
-          disabled={this.state.working}
-          style={this.props.fileButtonStyles}
-          onSelect={this.handleChange}
-        />
 
+        {!this.props.resource ? fileButton : null}
         {(this.state.working) ? loading : null}
       </div>
     );
@@ -134,8 +146,6 @@ ImageSelector.defaultProps = {
     width: '100%',
   },
   imageSelectorStyles: {
-    background: 'hsla(0, 0%, 50%, .2)',
-    border: '1px solid hsla(0, 0%, 50%, .4)',
     borderRadius: '5px',
     position: 'relative',
     width: 'auto',
@@ -163,5 +173,5 @@ ImageSelector.propTypes = {
   reductionPerPass: React.PropTypes.number,
   resource: React.PropTypes.shape({
     src: React.PropTypes.string,
-  }).isRequired,
+  }),
 };
