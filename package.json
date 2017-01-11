@@ -1,6 +1,6 @@
 {
   "name": "Zooniverse-React-Components",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Zooniverse-React-Components ===========================",
   "main": "lib/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "url": "https://github.com/zooniverse/Zooniverse-React-Components.git"
   },
   "author": "Zooniverse",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/zooniverse/Zooniverse-React-Components/issues"
   },
