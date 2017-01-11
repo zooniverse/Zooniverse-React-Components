@@ -35,7 +35,7 @@ export default class ImageSelector extends React.Component {
   //   }
 
   //   this.setState({ rootWidth: NaN }, () => {
-  //     this.setState({ rootWidth: ReactDOM.findDOMNode(this).clientWidth });
+  //     this.setState({ rootWidth: this.node.clientWidth });
 
   //     for (const img in imageSelectorPreviews) {
   //       img.style.display = img.dataset.displayWas;
@@ -131,14 +131,9 @@ export default class ImageSelector extends React.Component {
         {this.props.loadingIndicator || 'Loading...'}
       </span>);
 
-    const imageSelectorStyles = {
-      background: 'rgba(gray, 0.2)',
-      border: '1px solid rgba(gray, 0.4)',
-      borderRadius: '5px',
-      overflow: 'hidden',
-      position: 'relative',
-      width: this.state.rootWidth || 'auto',
-    };
+    const imageSelectorStyles = Object.assign(
+      {}, this.props.imageSelectorStyles, { width: this.state.rootWidth || 'auto' }
+    );
 
     const mediaIcon = <MediaIcon resource={this.props.resource} />;
 
@@ -149,15 +144,7 @@ export default class ImageSelector extends React.Component {
         <FileButton
           accept={this.props.accept}
           disabled={this.state.working}
-          style={{
-            cursor: 'pointer',
-            height: '100%',
-            left: 0,
-            position: 'absolute',
-            opacity: 0,
-            top: 0,
-            width: '100%',
-          }}
+          style={this.props.fileButtonStyles}
           onSelect={this.handleChange}
         />
 
@@ -169,6 +156,21 @@ export default class ImageSelector extends React.Component {
 
 ImageSelector.defaultProps = {
   accept: 'image/*',
+  fileButtonStyles: {
+    cursor: 'pointer',
+    height: '100%',
+    left: 0,
+    position: 'absolute',
+    opacity: 0,
+    top: 0,
+    width: '100%',
+  },
+  imageSelectorStyles: {
+    background: 'rgba(gray, 0.2)',
+    border: '1px solid rgba(gray, 0.4)',
+    borderRadius: '5px',
+    position: 'relative',
+  },
   loadingIndicator: null,
   maxSize: Infinity, // In bytes
   minArea: 300, // Stop reducing when there are fewer than this many pixels.
@@ -181,6 +183,8 @@ ImageSelector.defaultProps = {
 
 ImageSelector.propTypes = {
   accept: React.PropTypes.string,
+  fileButtonStyles: React.PropTypes.object,
+  imageSelectorStyles: React.PropTypes.object,
   loadingIndicator: React.PropTypes.element,
   maxSize: React.PropTypes.number,
   minArea: React.PropTypes.number,
