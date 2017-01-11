@@ -4,7 +4,6 @@
 /* eslint import/no-extraneous-dependencies: ["error", { "devDependencies": true  }] */
 import { mount } from 'enzyme';
 import React from 'react';
-// import sinon from 'sinon';
 import ZooniverseLogo from '../src/components/zooniverse-logo';
 
 describe('ZooniverseLogo', function() {
