@@ -4,3 +4,4 @@ export { default as MediaIcon } from './components/media-icon';
 export { default as ImageSelector } from './components/image-selector';
 export { default as FileButton } from './components/file-button';
 export { default as DragAndDropTarget } from './components/drag-and-drop-target';
+export { default as ZooniverseLogo } from './components/zooniverse-logo';
