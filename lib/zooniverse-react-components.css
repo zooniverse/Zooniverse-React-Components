@@ -63,12 +63,15 @@
   white-space: pre;
   width: 100%;
 }
-
 .drag-and-drop-target {
   border: 2px dashed transparent;
   border-radius: 3px;
 }
-
 .drag-and-drop-target[data-can-drop] {
   border-color: #43bbfd;
+}
+.zooniverse-logo {
+  position: relative;
+  width: 0.82em;
+  top: 0.14em;
 }
