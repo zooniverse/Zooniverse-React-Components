@@ -128,7 +128,7 @@ export default class ImageSelector extends React.Component {
         <span>{errorMessage}</span>
 
         {!this.props.resource ? fileButton : null}
-        {(this.state.working) ? loading : null}
+        {this.state.working ? loading : null}
       </div>
     );
   }
