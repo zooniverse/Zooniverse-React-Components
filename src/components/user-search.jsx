@@ -12,11 +12,21 @@ export default class UserSearch extends React.Component {
       users: [],
     };
 
+    this.clear = this.clear.bind(this);
+    this.value = this.value.bind(this);
     this.searchUsers = this.searchUsers.bind(this);
   }
 
   onChange(users) {
     this.setState({ users });
+  }
+
+  clear() {
+    this.setState({ users: [] });
+  }
+
+  value() {
+    return this.state.users;
   }
 
   delayBy(timeout, fn) { // eslint-disable-line class-methods-use-this
@@ -41,12 +51,12 @@ export default class UserSearch extends React.Component {
           .then((users) => {
             // TODO: looks like this will only match the first result in the page
             // shouldn't we use map or something like that instead?
-            for (const user in users) {
+            users.forEach((user) => {
               return {
                 value: user.id,
                 label: `@${user.login}: ${user.display_name}`,
               };
-            }
+            });
           })
           .then(options => resolve({ options }))
           .catch((err) => { console.error(err); });

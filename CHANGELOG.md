@@ -9,10 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - DragAndDrop component
 - FileButton component
-- ImageSelector component 
 - MediaIcon component
 - Thumbnail component
-- UserSeaerch component
+- UserSearch component
 - Default styles for DragAndDrop and MediaIcon
 - Build scripts to transpile stylus and jsx into css and js in lib folder
 - Mocha tests for DragAndDrop and MediaIcon
