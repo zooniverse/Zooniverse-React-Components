@@ -2,6 +2,10 @@ import React from 'react';
 import Select from 'react-select';
 import apiClient from 'panoptes-client/lib/api-client';
 
+const delayBy = (timeout, fn) => {
+  return setTimeout(fn, timeout);
+};
+
 export default class UserSearch extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +22,7 @@ export default class UserSearch extends React.Component {
   }
 
   onChange(users) {
+    console.log('heyo')
     this.setState({ users });
   }
 
@@ -29,10 +34,6 @@ export default class UserSearch extends React.Component {
     return this.state.users;
   }
 
-  delayBy(timeout, fn) { // eslint-disable-line class-methods-use-this
-    return setTimeout(fn, timeout);
-  }
-
   searchUsers(value) {
     clearTimeout(this.queryTimeout);
     const onSearch = this.props.onSearch;
@@ -42,16 +43,15 @@ export default class UserSearch extends React.Component {
     }
 
     return new Promise((resolve) => {
-      this.queryTimeout = this.delayBy(this.props.debounce, () => {
+      this.queryTimeout = delayBy(this.props.debounce, () => {
+        console.log('hey')
         if (onSearch) {
           onSearch();
         }
 
         return apiClient.type('users').get({ search: value, page_size: 10 })
           .then((users) => {
-            // TODO: looks like this will only match the first result in the page
-            // shouldn't we use map or something like that instead?
-            users.forEach((user) => {
+            users.map((user) => {
               return {
                 value: user.id,
                 label: `@${user.login}: ${user.display_name}`,
@@ -61,6 +61,8 @@ export default class UserSearch extends React.Component {
           .then(options => resolve({ options }))
           .catch((err) => { console.error(err); });
       });
+
+      return this.queryTimeout;
     });
   }
 
