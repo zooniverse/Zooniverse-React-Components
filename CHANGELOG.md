@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 ### Added
-- DisplayNameSlugEditor component
+- DisplayNameSlugEditor component and tests
+- ImageSelector component and tests
 
 ### Fixed
 - Removed capitalization from package name to conform with NPM requirements
