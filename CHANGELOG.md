@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+### Added
+- DisplayNameSlugEditor component
+
+### Fixed
+- Removed capitalization from package name to conform with NPM requirements
+
 ## [0.1.2] 2017-02-20
 ### Fixed
 - Fixed build
