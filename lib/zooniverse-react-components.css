@@ -89,6 +89,23 @@
   white-space: pre;
   width: 100%;
 }
+.paginator {
+  text-align: center;
+}
+.paginator > button {
+  margin: 5px;
+}
+.paginator .paginator-page-selector {
+  display: inline-block;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
+.paginator .paginator-prev {
+  background: none;
+}
+.paginator .paginator-next {
+  background: none;
+}
 .zooniverse-logo {
   position: relative;
   width: 0.82em;
