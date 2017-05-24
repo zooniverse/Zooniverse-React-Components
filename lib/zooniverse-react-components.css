@@ -29,15 +29,11 @@
 }
 .slug-editor__form-help {
   color: inherit;
+  font: inherit;
 }
 .slug-editor__form-label {
   color: inherit;
   font: inherit;
-  font-size: 0.7em;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  opacity: 0.7;
-  text-transform: uppercase;
 }
 .slug-editor__form-input {
   border: 1px solid;
