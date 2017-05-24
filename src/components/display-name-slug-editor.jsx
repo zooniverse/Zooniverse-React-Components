@@ -4,6 +4,7 @@ class DisplayNameSlugEditor extends Component {
   constructor(props) {
     super(props);
     this.getResourceUrl = this.getResourceUrl.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.undoNameChange = this.undoNameChange.bind(this);
     this.warnURLChange = this.warnURLChange.bind(this);
     this.state = {
@@ -14,17 +15,17 @@ class DisplayNameSlugEditor extends Component {
   }
 
   componentDidMount() {
-    this.getResourceUrl();
+    this.getResourceUrl(this.props.resource);
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.resource !== nextProps.resource) {
-      this.getResourceUrl();
+      this.getResourceUrl(nextProps.resource);
     }
   }
 
-  getResourceUrl() {
-    const { resource, resourceType } = this.props;
+  getResourceUrl(resource) {
+    const { resourceType } = this.props;
     this.setState({ value: resource.display_name, url: `/${resourceType}s/${resource.slug}` });
   }
 
@@ -35,12 +36,13 @@ class DisplayNameSlugEditor extends Component {
   }
 
   undoNameChange() {
-    this.setState({ value: '' });
+    this.setState({ value: this.props.resource.display_name });
   }
 
   warnURLChange(resource, displayNameInputValue) {
     const warn = resource.display_name !== displayNameInputValue &&
-      resource.slug.match(/(untitled-project|untitled-organization)/i) === null;
+      (resource.slug.match(/(untitled-project)/i) === null ||
+        resource.slug.match(/(untitled-organization)/i) === null);
 
     if (warn) {
       this.setState({ warn });
@@ -58,7 +60,7 @@ class DisplayNameSlugEditor extends Component {
           <input
             type="text"
             className={`${this.props.className}__form-input`}
-            disabled={resource.live || resource.listed_at}
+            disabled={resource.live || !!resource.listed_at}
             id="display_name"
             name="display_name"
             onChange={this.handleInputChange}
@@ -81,7 +83,7 @@ class DisplayNameSlugEditor extends Component {
 
         {(state.url)
           ? <small className={`${this.props.className}__form-help`}>
-              {(resource.live || resource.listed_at)
+              {(resource.live || !!resource.listed_at)
                 ? `You cannot change a live ${resourceType}'s name.`
                 : `The ${resourceType} name is the first thing people will see about the ${resourceType}, and it will show up in the ${resourceType} URL. Try to keep it short and sweet.`
               }
