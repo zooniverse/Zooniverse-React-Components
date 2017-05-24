@@ -25,7 +25,7 @@ class DisplayNameSlugEditor extends Component {
 
   getResourceUrl() {
     const { resource, resourceType } = this.props;
-    this.setState({ url: `/${resourceType}s/${resource.slug}` });
+    this.setState({ value: resource.display_name, url: `/${resourceType}s/${resource.slug}` });
   }
 
   handleInputChange(event) {
@@ -58,7 +58,6 @@ class DisplayNameSlugEditor extends Component {
           <input
             type="text"
             className={`${this.props.className}__form-input`}
-            defaultValue={resource.display_name}
             disabled={resource.live || resource.listed_at}
             id="display_name"
             name="display_name"
