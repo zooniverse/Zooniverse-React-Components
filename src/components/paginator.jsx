@@ -10,8 +10,8 @@ const Paginator = ({
   firstAndLast,
   itemCount,
   nextLabel,
-  // onClickNext,
-  // onClickPrev,
+  onClickNext,
+  onClickPrev,
   onPageChange,
   page,
   pageCount,
@@ -19,6 +19,28 @@ const Paginator = ({
   previousLabel,
   totalItems,
 }) => {
+  let clickPrev;
+  if (onClickPrev === undefined) {
+    clickPrev = () => {
+      onPageChange(page - 1);
+    };
+  } else {
+    clickPrev = () => {
+      onClickPrev(page);
+    };
+  }
+
+  let clickNext;
+  if (onClickNext === undefined) {
+    clickNext = () => {
+      onPageChange(page + 1);
+    };
+  } else {
+    clickNext = () => {
+      onClickNext(page);
+    };
+  }
+
   const paginatorClassName = `paginator ${className}`.trim();
 
   return (
@@ -37,7 +59,7 @@ const Paginator = ({
         type="button"
         className="paginator-button"
         disabled={page === 1}
-        onClick={() => onPageChange(page - 1)}
+        onClick={() => clickPrev()}
       >
         {previousLabel}
       </button>
@@ -62,7 +84,7 @@ const Paginator = ({
         type="button"
         className="paginator-button"
         disabled={page === pageCount}
-        onClick={() => onPageChange(page + 1)}
+        onClick={() => clickNext()}
       >
         {nextLabel}
       </button>
@@ -86,12 +108,6 @@ Paginator.defaultProps = {
   firstAndLast: true,
   itemCount: false,
   nextLabel: <span>Next <i className="fa fa-long-arrow-right" /></span>,
-  // onClickNext: () => {
-  //   this.onPageChange(this.page + 1);
-  // },
-  // onClickPrev: () => {
-  //   this.onPageChange(this.page - 1);
-  // },
   onPageChange: () => {},
   page: 1,
   pageSelector: true,
@@ -104,9 +120,9 @@ Paginator.propTypes = {
   firstAndLast: React.PropTypes.bool,
   itemCount: React.PropTypes.bool,
   nextLabel: React.PropTypes.node,
-  // onClickNext: React.PropTypes.func,
-  // onClickPrev: React.PropTypes.func,
-  onPageChange: React.PropTypes.func.isRequired,
+  onClickNext: React.PropTypes.func,
+  onClickPrev: React.PropTypes.func,
+  onPageChange: React.PropTypes.func,
   page: React.PropTypes.number.isRequired,
   pageCount: React.PropTypes.number,
   pageSelector: React.PropTypes.bool,
