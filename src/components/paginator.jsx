@@ -1,4 +1,5 @@
 import React from 'react';
+import FontAwesome from 'font-awesome/css/font-awesome.min.css'; // eslint-disable-line no-unused-vars
 
 const pageOption = (n, i) =>
   <option key={i} value={n}>
@@ -8,7 +9,9 @@ const pageOption = (n, i) =>
 const Paginator = ({
   className,
   firstAndLast,
+  firstIcon,
   itemCount,
+  lastIcon,
   nextLabel,
   onClickNext,
   onClickPrev,
@@ -52,7 +55,7 @@ const Paginator = ({
           onClick={() => onPageChange(1)}
           disabled={page === 1}
         >
-          <i className="fa fa-fast-backward" /> First
+          {firstIcon} First
         </button>)}
 
       <button
@@ -96,7 +99,7 @@ const Paginator = ({
           onClick={() => onPageChange(pageCount)}
           disabled={page === pageCount}
         >
-          Last <i className="fa fa-fast-forward" />
+          Last {lastIcon}
         </button>)}
 
     </div>
@@ -106,7 +109,9 @@ const Paginator = ({
 Paginator.defaultProps = {
   className: '',
   firstAndLast: true,
+  firstIcon: <i className="fa fa-fast-backward" />,
   itemCount: false,
+  lastIcon: <i className="fa fa-fast-forward" />,
   nextLabel: <span>Next <i className="fa fa-long-arrow-right" /></span>,
   onPageChange: () => {},
   page: 1,
@@ -118,7 +123,9 @@ Paginator.defaultProps = {
 Paginator.propTypes = {
   className: React.PropTypes.string,
   firstAndLast: React.PropTypes.bool,
+  firstIcon: React.PropTypes.node,
   itemCount: React.PropTypes.bool,
+  lastIcon: React.PropTypes.node,
   nextLabel: React.PropTypes.node,
   onClickNext: React.PropTypes.func,
   onClickPrev: React.PropTypes.func,
