@@ -1,9 +1,19 @@
 .paginator
+  font-size: 12px
+  line-height: 16.4px
   text-align: center
 
   .paginator-button
     @extends $reset-button
     margin: 5px
+
+    &:hover
+      background: #43bbfd
+      color: white
+
+  .paginator-label
+    > *
+      padding: .25em
 
   .paginator-page-selector
     display: inline-block

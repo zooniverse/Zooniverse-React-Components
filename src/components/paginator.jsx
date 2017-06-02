@@ -9,9 +9,9 @@ const pageOption = (n, i) =>
 const Paginator = ({
   className,
   firstAndLast,
-  firstIcon,
+  firstLabel,
   itemCount,
-  lastIcon,
+  lastLabel,
   nextLabel,
   onClickNext,
   onClickPrev,
@@ -55,7 +55,7 @@ const Paginator = ({
           onClick={() => onPageChange(1)}
           disabled={page === 1}
         >
-          {firstIcon} First
+          {firstLabel}
         </button>)}
 
       <button
@@ -69,13 +69,13 @@ const Paginator = ({
 
       {pageSelector &&
         (<div className="paginator-page-selector">
-          Page&nbsp;
+          PAGE&nbsp;
           <select
             value={page}
             onChange={(e) => { onPageChange(e.target.value); }}
           >
             {Array.from({ length: pageCount }, (v, i) => i + 1).map(pageOption)}
-          </select> of {pageCount}
+          </select> OF {pageCount}
         </div>)}
 
       {itemCount && totalItems &&
@@ -99,7 +99,7 @@ const Paginator = ({
           onClick={() => onPageChange(pageCount)}
           disabled={page === pageCount}
         >
-          Last {lastIcon}
+          {lastLabel}
         </button>)}
 
     </div>
@@ -109,23 +109,23 @@ const Paginator = ({
 Paginator.defaultProps = {
   className: '',
   firstAndLast: true,
-  firstIcon: <i className="fa fa-fast-backward" />,
+  firstLabel: <span className="paginator-label"><i className="fa fa-angle-double-left" /> FIRST</span>,
   itemCount: false,
-  lastIcon: <i className="fa fa-fast-forward" />,
-  nextLabel: <span>Next <i className="fa fa-long-arrow-right" /></span>,
+  lastLabel: <span className="paginator-label">LAST <i className="fa fa-angle-double-right" /></span>,
+  nextLabel: <span className="paginator-label">NEXT <i className="fa fa-angle-right" /></span>,
   onPageChange: () => {},
   page: 1,
   pageSelector: true,
-  previousLabel: <span><i className="fa fa-long-arrow-left" /> Previous</span>,
+  previousLabel: <span className="paginator-label"><i className="fa fa-angle-left" /> PREVIOUS</span>,
   totalItems: undefined,
 };
 
 Paginator.propTypes = {
   className: React.PropTypes.string,
   firstAndLast: React.PropTypes.bool,
-  firstIcon: React.PropTypes.node,
+  firstLabel: React.PropTypes.node,
   itemCount: React.PropTypes.bool,
-  lastIcon: React.PropTypes.node,
+  lastLabel: React.PropTypes.node,
   nextLabel: React.PropTypes.node,
   onClickNext: React.PropTypes.func,
   onClickPrev: React.PropTypes.func,

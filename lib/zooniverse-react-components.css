@@ -94,10 +94,19 @@
   width: 100%;
 }
 .paginator {
+  font-size: 12px;
+  line-height: 16.4px;
   text-align: center;
 }
 .paginator .paginator-button {
   margin: 5px;
+}
+.paginator .paginator-button:hover {
+  background: #43bbfd;
+  color: #fff;
+}
+.paginator .paginator-label > * {
+  padding: 0.25em;
 }
 .paginator .paginator-page-selector {
   display: inline-block;
