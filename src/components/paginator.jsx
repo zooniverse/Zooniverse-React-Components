@@ -25,7 +25,7 @@ const Paginator = ({
   totalItems,
 }) => {
   let pageChange;
-  if (router !== undefined && onPageChange === undefined) {
+  if (router && onPageChange === undefined) {
     pageChange = (activePage) => {
       const queryChange = {};
       queryChange[pageKey] = activePage;
@@ -36,24 +36,24 @@ const Paginator = ({
   }
 
   let clickPrev;
-  if (onClickPrev === undefined) {
+  if (onClickPrev) {
     clickPrev = () => {
-      pageChange(page - 1);
+      onClickPrev(page);
     };
   } else {
     clickPrev = () => {
-      onClickPrev(page);
+      pageChange(page - 1);
     };
   }
 
   let clickNext;
-  if (onClickNext === undefined) {
+  if (onClickNext) {
     clickNext = () => {
-      pageChange(page + 1);
+      onClickNext(page);
     };
   } else {
     clickNext = () => {
-      onClickNext(page);
+      pageChange(page + 1);
     };
   }
 
@@ -64,6 +64,7 @@ const Paginator = ({
       {firstAndLast &&
         (<button
           type="button"
+          id="first"
           className="paginator-button"
           onClick={() => pageChange(1)}
           disabled={page === 1}
@@ -73,6 +74,7 @@ const Paginator = ({
 
       <button
         type="button"
+        id="previous"
         className="paginator-button"
         disabled={page === 1}
         onClick={() => clickPrev()}
@@ -98,6 +100,7 @@ const Paginator = ({
 
       <button
         type="button"
+        id="next"
         className="paginator-button"
         disabled={page === pageCount}
         onClick={() => clickNext()}
@@ -108,6 +111,7 @@ const Paginator = ({
       {firstAndLast &&
         (<button
           type="button"
+          id="last"
           className="paginator-button"
           onClick={() => pageChange(pageCount)}
           disabled={page === pageCount}
@@ -152,7 +156,7 @@ Paginator.propTypes = {
   onClickNext: React.PropTypes.func,
   onClickPrev: React.PropTypes.func,
   onPageChange: React.PropTypes.func,
-  page: React.PropTypes.number.isRequired,
+  page: React.PropTypes.number,
   pageCount: React.PropTypes.number,
   pageKey: React.PropTypes.string,
   pageSelector: React.PropTypes.bool,
