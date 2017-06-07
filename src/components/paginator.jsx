@@ -25,7 +25,7 @@ const Paginator = ({
   totalItems,
 }) => {
   let pageChange;
-  if (router && onPageChange === undefined) {
+  if (router && !onPageChange) {
     pageChange = (activePage) => {
       const queryChange = {};
       queryChange[pageKey] = activePage;
@@ -167,7 +167,10 @@ Paginator.propTypes = {
   router: React.PropTypes.shape({
     push: React.PropTypes.func,
   }),
-  totalItems: React.PropTypes.node,
+  totalItems: React.PropTypes.oneOfType([
+    React.PropTypes.node,
+    React.PropTypes.string,
+  ]),
 };
 
 export default Paginator;
