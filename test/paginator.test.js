@@ -96,38 +96,99 @@ describe('Paginator', function() {
   });
 
   describe('with props page, pageKey and router provided', function() {
-    // let wrapper;
-    // sinon.spy(router, 'push');
-    //
-    // beforeEach(function() {
-    //   wrapper = mount(<Paginator page={5} pageCount={10} pageKey={'testPage'} router={router} />);
-    // });
-    //
-    // it('should start on page', function() {
-    //   expect(wrapper.prop('page')).to.equal(5);
-    // });
-    // it('should add pageKey to param onChange', function() {
-    //   wrapper.find('#next').simulate('click');
-    //   expect(router.push.calledOnce).to.equal(true);
-    // });
+    let wrapper;
+    const router = { push() {} };
+    const spy = sinon.spy(router, 'push');
 
-    // it('should go to the next page', function() {});
-    // it('should go to the last page', function() {});
-    // it('should go to the previous page', function() {});
-    // it('should go to the first page', function() {});
-    // it('should go to a page selected', function() {});
+    beforeEach(function() {
+      wrapper = mount(<Paginator page={5} pageCount={10} pageKey={'testPage'} router={router} />);
+    });
+
+    it('should start on page', function() {
+      expect(wrapper.prop('page')).to.equal(5);
+    });
+    it('should add pageKey to param onChange', function() {
+      wrapper.find('#next').simulate('click');
+      expect(Object.keys(spy.args[0][0].query)).to.include('testPage');
+      spy.reset();
+    });
+    it('should go to the next page', function() {
+      wrapper.find('#next').simulate('click');
+      expect(spy.args[0][0].query.testPage).to.equal(6);
+      spy.reset();
+    });
+    it('should go to the last page', function() {
+      wrapper.find('#last').simulate('click');
+      expect(spy.args[0][0].query.testPage).to.equal(10);
+      spy.reset();
+    });
+    it('should go to the previous page', function() {
+      wrapper.find('#previous').simulate('click');
+      expect(spy.args[0][0].query.testPage).to.equal(4);
+      spy.reset();
+    });
+    it('should go to the first page', function() {
+      wrapper.find('#first').simulate('click');
+      expect(spy.args[0][0].query.testPage).to.equal(1);
+      spy.reset();
+    });
+    it('should go to a page selected', function() {
+      wrapper.find('select').simulate('change', { target: { value: 3 }});
+      expect(spy.args[0][0].query.testPage).to.equal(3);
+      spy.reset();
+    });
   });
 
-  describe('with onChange prop provided', function() {
-    // it('should go to the next page', function() {});
-    // it('should go to the last page', function() {});
-    // it('should go to the previous page', function() {});
-    // it('should go to the first page', function() {});
-    // it('should go to a page selected', function() {});
+  describe('with onPageChange prop provided', function() {
+    let wrapper;
+    const onPageChange = sinon.spy();
+
+    beforeEach(function() {
+      wrapper = mount(<Paginator page={5} pageCount={10} onPageChange={onPageChange} />);
+    });
+
+    it('should go to the next page', function() {
+      wrapper.find('#next').simulate('click');
+      expect(onPageChange.withArgs(6).calledOnce).to.equal(true);
+      onPageChange.reset();
+    });
+    it('should go to the last page', function() {
+      wrapper.find('#last').simulate('click');
+      expect(onPageChange.withArgs(10).calledOnce).to.equal(true);
+      onPageChange.reset();
+    });
+    it('should go to the previous page', function() {
+      wrapper.find('#previous').simulate('click');
+      expect(onPageChange.withArgs(4).calledOnce).to.equal(true);
+      onPageChange.reset();
+    });
+    it('should go to the first page', function() {
+      wrapper.find('#first').simulate('click');
+      expect(onPageChange.withArgs(1).calledOnce).to.equal(true);
+      onPageChange.reset();
+    });
+    it('should go to a page selected', function() {
+      wrapper.find('select').simulate('change', { target: { value: 3 }});
+      expect(onPageChange.withArgs(3).calledOnce).to.equal(true);
+      onPageChange.reset();
+    });
   });
 
   describe('with props onClickNext and onClickPrev provided', function() {
-    // it('should appropriately call onClickNext', function() {});
-    // it('should appropriately call onClickPrev', function() {});
+    let wrapper;
+    const onClickNext = sinon.spy();
+    const onClickPrev = sinon.spy();
+
+    beforeEach(function() {
+      wrapper = mount(<Paginator page={5} pageCount={10} onClickNext={onClickNext} onClickPrev={onClickPrev} />);
+    });
+    it('should appropriately call onClickNext', function() {
+      wrapper.find('#next').simulate('click');
+      expect(onClickNext.withArgs(5).calledOnce).to.equal(true);
+    });
+    it('should appropriately call onClickPrev', function() {
+      wrapper.find('#previous').simulate('click');
+      expect(onClickPrev.withArgs(5).calledOnce).to.equal(true);
+    });
   });
 });
