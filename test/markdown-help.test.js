@@ -2,8 +2,7 @@
 /* eslint-disable func-names, prefer-arrow-callback */
 /* eslint import/no-extraneous-dependencies: ["error", { "devDependencies": true  }] */
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { expect } from 'chai';
+import { mount } from 'enzyme';
 
 import MarkdownHelp from '../src/components/markdown-help';
 
@@ -22,7 +21,7 @@ describe('<MarkdownHelp />', function() {
     });
 
     it('should not render TalkMarkdownHelp component', function() {
-      expect(wrapper.find('TalkMarkdownHelp')).to.have.lengthOf(0)
+      expect(wrapper.find('TalkMarkdownHelp')).to.have.lengthOf(0);
     });
 
     it('should display the default title', function() {
@@ -45,5 +44,4 @@ describe('<MarkdownHelp />', function() {
       expect(wrapper.find('.markdown-editor-title').text()).to.include('Lorem Ipsum');
     });
   });
-
 });
