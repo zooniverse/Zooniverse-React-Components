@@ -215,12 +215,12 @@ const MarkdownHelp = ({ title, talk }) => {
           <tr>
             <td>Resized Image</td>
             <td>
-              ![imagealttext](/assets/simple-avatar.png =MxN)<br />
+              ![imagealttext](../../src/images/simple-avatar.png =MxN)<br />
               <em>M is width in pixels, N is height in pixels</em><br />
               <em>constrain by ommitting one value, e.g.: =75x or =x75</em>
             </td>
             <td>
-              <Markdown>![imagealttext](/assets/simple-avatar.png =75x75)</Markdown>
+              <Markdown>![imagealttext](../images/simple-avatar.png =75x75)</Markdown>
               sample set @ 75x75
             </td>
           </tr>
