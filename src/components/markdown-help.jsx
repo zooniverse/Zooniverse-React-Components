@@ -1,5 +1,6 @@
 import React from 'react';
 import { Markdown } from 'markdownz';
+import simpleAvatar from '../images/simple-avatar.png';
 
 const TalkMarkdownHelp = () =>
   (<table>
@@ -50,22 +51,28 @@ const MarkdownHelp = ({ title, talk }) => {
   - item two
   - item three
   `;
+
   const numberedList = `
   1. item one
   2. item two
   3. item three
   `;
+
   const nestedList = `
   - item one
     - item two
       - item three
   - item four
   `;
+
   const headers = `
   # header1
   ## header2
   ### header3
   `;
+
+  const avatarImage = `![imagealttext](${simpleAvatar})`;
+  const avatarImageResized = `![imagealttext](${simpleAvatar} =75x75)`;
 
   return (
     <div className="markdown-editor-help">
@@ -209,7 +216,7 @@ const MarkdownHelp = ({ title, talk }) => {
               <em>images must already be uploaded; use <a href="http://imgur.com/" rel="noopener noreferrer" target="_blank">imgur</a> to host new images</em>
             </td>
             <td>
-              <Markdown>![imagealttext](/assets/simple-avatar.png)</Markdown>
+              <Markdown>{avatarImage}</Markdown>
             </td>
           </tr>
           <tr>
@@ -220,7 +227,7 @@ const MarkdownHelp = ({ title, talk }) => {
               <em>constrain by ommitting one value, e.g.: =75x or =x75</em>
             </td>
             <td>
-              <Markdown>![imagealttext](../images/simple-avatar.png =75x75)</Markdown>
+              <Markdown>{avatarImageResized}</Markdown>
               sample set @ 75x75
             </td>
           </tr>
