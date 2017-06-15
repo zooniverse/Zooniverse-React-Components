@@ -222,7 +222,7 @@ const MarkdownHelp = ({ title, talk }) => {
           <tr>
             <td>Resized Image</td>
             <td>
-              ![imagealttext](../../src/images/simple-avatar.png =MxN)<br />
+              ![imagealttext](assets/simple-avatar.png =MxN)<br />
               <em>M is width in pixels, N is height in pixels</em><br />
               <em>constrain by ommitting one value, e.g.: =75x or =x75</em>
             </td>
