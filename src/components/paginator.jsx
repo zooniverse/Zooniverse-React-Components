@@ -1,8 +1,8 @@
 import React from 'react';
 import updateQueryParams from '../lib/update-query-params';
 
-const pageOption = (n, i) =>
-  <option key={i} value={n}>
+const pageOption = n =>
+  <option key={n} value={n}>
     {n}
   </option>;
 
@@ -84,12 +84,12 @@ const Paginator = ({
 
       {pageSelector &&
         (<div className="paginator-page-selector">
-          PAGE&nbsp;
+          PAGE
           <select
             value={page}
             onChange={(e) => { pageChange(e.target.value); }}
           >
-            {Array.from({ length: pageCount }, (v, i) => i + 1).map(pageOption)}
+            {[...Array(pageCount).keys()].map(i => pageOption(i + 1))}
           </select> OF {pageCount}
         </div>)}
 
@@ -134,7 +134,6 @@ Paginator.defaultProps = {
   pageKey: 'page',
   pageSelector: true,
   previousLabel: <span><span className="paginator-icon">&lsaquo;</span> PREVIOUS</span>,
-  totalItems: undefined,
 };
 
 Paginator.propTypes = {

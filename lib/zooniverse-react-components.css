@@ -94,8 +94,8 @@
   width: 100%;
 }
 .paginator {
-  font-size: 12px;
-  line-height: 16.4px;
+  font-size: 0.86em;
+  line-height: 1.37em;
   text-align: center;
 }
 .paginator .paginator-button {
@@ -116,6 +116,7 @@
   display: inline-block;
   margin-left: 0.25em;
   margin-right: 0.25em;
+  white-space: nowrap;
 }
 .zooniverse-logo {
   position: relative;
