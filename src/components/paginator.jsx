@@ -126,14 +126,14 @@ const Paginator = ({
 Paginator.defaultProps = {
   className: '',
   firstAndLast: true,
-  firstLabel: <span><span className="paginator-icon">&laquo;</span> FIRST</span>,
+  firstLabel: <span className="paginator-label"><span className="paginator-icon">&laquo;</span> first</span>,
   itemCount: false,
-  lastLabel: <span>LAST <span className="paginator-icon">&raquo;</span></span>,
-  nextLabel: <span>NEXT <span className="paginator-icon">&rsaquo;</span></span>,
+  lastLabel: <span className="paginator-label">last <span className="paginator-icon">&raquo;</span></span>,
+  nextLabel: <span className="paginator-label">next <span className="paginator-icon">&rsaquo;</span></span>,
   page: 1,
   pageKey: 'page',
   pageSelector: true,
-  previousLabel: <span><span className="paginator-icon">&lsaquo;</span> PREVIOUS</span>,
+  previousLabel: <span className="paginator-label"><span className="paginator-icon">&lsaquo;</span> previous</span>,
 };
 
 Paginator.propTypes = {
