@@ -96,7 +96,7 @@ class DisplayNameSlugEditor extends Component {
               Your {resourceType}’s URL is
               {' '}
               <a href={this.props.origin + state.url}>
-                {state.url}
+                {this.props.origin + state.url}
               </a>
             </small>
           : null
