@@ -6,10 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.4.0]
 ### Added
-- ZooFooter component and tests
+- ZooFooter component, default CSS, and tests
 - AdminCheckbox component and tests
 - AdminLayoutIndicator component and tests
 - Added `dirty-chai` for tests
+- Added `grommet` dependency for ZooFooter and AdminCheckbox components
+- Specified node 8 and npm 5 in package.json and added package-lock.json file
 
 ### Fixed
 - Added className props to ZooniverseLogo and ZooniverseLogotype
@@ -19,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated `react` and `react-dom` dependencies
 - Updated to use the `prop-types` dependency for React PropTypes
 - Updated `react-select` dependency
+- Changed Paginator selection text to use a prop and minor default CSS margin change
 
 ## [0.3.0] 2017-07-17
 ### Added
