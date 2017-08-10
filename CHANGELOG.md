@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.0]
+### Added
+- ZooFooter component and tests
+- AdminCheckbox component and tests
+- AdminLayoutIndicator component and tests
+- Added `dirty-chai` for tests
+
+### Fixed
+- Added className props to ZooniverseLogo and ZooniverseLogotype
+- Updated `jsdom` dependency and setup configuration for testing
+
+### Changed
+- Updated `react` and `react-dom` dependencies
+- Updated to use the `prop-types` dependency for React PropTypes
+- Updated `react-select` dependency
+
 ## [0.3.0] 2017-07-17
 ### Added
 - Paginator component and tests
