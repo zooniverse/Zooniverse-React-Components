@@ -22,6 +22,7 @@ const Paginator = ({
   pageSelector,
   previousLabel,
   router,
+  selectionText,
   totalItems,
 }) => {
   let pageChange;
@@ -90,7 +91,7 @@ const Paginator = ({
             onChange={(e) => { pageChange(e.target.value); }}
           >
             {[...Array(pageCount).keys()].map(i => pageOption(i + 1))}
-          </select> OF {pageCount}
+          </select>{selectionText} {pageCount}
         </div>)}
 
       {itemCount && totalItems &&
@@ -134,6 +135,7 @@ Paginator.defaultProps = {
   pageKey: 'page',
   pageSelector: true,
   previousLabel: <span className="paginator-label"><span className="paginator-icon">&lsaquo;</span> previous</span>,
+  selectionText: 'OF'
 };
 
 Paginator.propTypes = {
@@ -166,6 +168,7 @@ Paginator.propTypes = {
   router: React.PropTypes.shape({
     push: React.PropTypes.func,
   }),
+  selectionText: React.PropTypes.string,
   totalItems: React.PropTypes.oneOfType([
     React.PropTypes.node,
     React.PropTypes.string,
