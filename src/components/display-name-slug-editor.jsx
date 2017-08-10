@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class DisplayNameSlugEditor extends Component {
   constructor(props) {
@@ -108,7 +109,7 @@ class DisplayNameSlugEditor extends Component {
 
 DisplayNameSlugEditor.propTypes = {
   className: PropTypes.string,
-  origin: React.PropTypes.string,
+  origin: PropTypes.string,
   resource: PropTypes.shape({
     display_name: PropTypes.string,
     listed_at: PropTypes.string,
