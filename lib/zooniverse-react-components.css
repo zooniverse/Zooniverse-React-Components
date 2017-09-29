@@ -1,6 +1,11 @@
 .logout-button,
 .media-icon-delete-button,
-.paginator .paginator-button {
+.paginator .paginator-button,
+.step-through-direction,
+.modal-form-trigger,
+.modal-dialog-toolbar-button,
+.standard-button,
+.major-button {
   background: transparent;
   border: 0;
   color: inherit;
@@ -17,15 +22,30 @@
 .media-icon-delete-button:disabled,
 .paginator .paginator-button:disabled,
 .logout-button[data-disabled],
+.step-through-direction:disabled,
+.modal-form-trigger:disabled,
+.modal-dialog-toolbar-button:disabled,
+.standard-button:disabled,
+.major-button:disabled,
 .media-icon-delete-button[data-disabled],
-.paginator .paginator-button[data-disabled] {
+.paginator .paginator-button[data-disabled],
+.step-through-direction[data-disabled],
+.modal-form-trigger[data-disabled],
+.modal-dialog-toolbar-button[data-disabled],
+.standard-button[data-disabled],
+.major-button[data-disabled] {
   cursor: inherit;
   opacity: 0.3;
   pointer-events: none;
 }
 .logout-button[data-busy]::after,
 .media-icon-delete-button[data-busy]::after,
-.paginator .paginator-button[data-busy]::after {
+.paginator .paginator-button[data-busy]::after,
+.step-through-direction[data-busy]::after,
+.modal-form-trigger[data-busy]::after,
+.modal-dialog-toolbar-button[data-busy]::after,
+.standard-button[data-busy]::after,
+.major-button[data-busy]::after {
   animation: busy-button-animation 1s linear infinite alternate;
   background: linear-gradient(90deg, rgba(128,128,128,0), rgba(128,128,128,0.2), rgba(128,128,128,0));
   bottom: 0;
@@ -370,4 +390,193 @@
 }
 .user-navigation .zoo-header__link--small:last-child {
   margin-right: 1.5em !important;
+}
+.modal-form.tutorial-dialog {
+  border-radius: 8px;
+  max-width: 400px;
+  padding: 0 0 1.5em;
+}
+@media screen and (max-width: 400px) {
+  .modal-form.tutorial-dialog {
+    margin-left: 0em;
+    margin-top: 1.75em;
+  }
+}
+.tutorial-steps {
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+  max-width: 95vw;
+  width: 50ch;
+}
+.tutorial-steps > .step-through-content {
+  overflow-y: auto !important;
+}
+.tutorial-steps > .step-through-controls {
+  text-align: center;
+}
+.tutorial-steps .media-card.tutorial-step > .media-card-content {
+  margin: 1.5em 3vw;
+}
+.tutorial-steps .media-card.tutorial-step > .media-card-content img {
+  max-width: 100%;
+}
+.tutorial-steps .media-card-media {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+.step-through-direction {
+  vertical-align: middle;
+}
+.step-through-pips {
+  margin: 0 0.4em;
+}
+.step-through-pip {
+  cursor: pointer;
+  padding: 0.2em 0.4em;
+}
+.step-through-pip-input {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+}
+.step-through-pip-number {
+  border: 0.2em solid;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 0.5em;
+  overflow: hidden;
+  text-indent: 2em;
+  vertical-align: middle;
+  width: 0.5em;
+}
+:focus + .step-through-pip-number {
+  box-shadow: 0 0 1px 1px MAIN_HIGHLIGHT;
+}
+:checked + .step-through-pip-number {
+  background: currentColor;
+}
+@media (max-width: 600px) {
+  .modal-form-trigger .site-nav__link strong {
+    display: inline-block;
+    max-width: 8.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+  }
+}
+.modal-form-underlay {
+  background: rgba(128,128,128,0.2);
+  z-index: 10;
+}
+.modal-form-pointer {
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  height: 1em;
+  transform: translateX(0.3em) rotate(45deg);
+  width: 1em;
+  z-index: -1;
+}
+.modal-form {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.5);
+  color: #000;
+  font-size: 14px;
+  margin: 0.5em 3vw;
+  padding: 0.5em 1em;
+}
+.modal-form.site-nav__modal {
+  margin: 0.5em 0 0.5em 2.25em;
+  padding: 0;
+}
+.modal-dialog-toolbar {
+  bottom: 100%;
+  margin-bottom: 0.5em;
+  position: absolute;
+  right: 0;
+}
+.modal-dialog-toolbar-button {
+  background: rgba(0,0,0,0.5);
+  border-radius: 2em;
+  color: #fff;
+  height: 1em;
+  font-size: 2em;
+  line-height: 1;
+  min-width: 1em;
+  text-shadow: 0 2px 4px #000;
+}
+.modal-dialog-toolbar-button:hover {
+  background: rgba(0,0,0,0.8);
+}
+.modal-dialog-toolbar-button:active {
+  background: #000;
+}
+.standard-button,
+.major-button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+}
+.standard-button:disabled,
+.major-button:disabled,
+.standard-button[data-disabled],
+.major-button[data-disabled] {
+  cursor: inherit;
+  opacity: 0.3;
+  pointer-events: none;
+}
+.standard-button[data-busy]::after,
+.major-button[data-busy]::after {
+  animation: busy-button-animation 1s linear infinite alternate;
+  background: linear-gradient(90deg, rgba(128,128,128,0), rgba(128,128,128,0.2), rgba(128,128,128,0));
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.standard-button,
+.major-button {
+  background: #43bbfd;
+  border-radius: 3px;
+  color: #fff;
+  padding: 0.4em 1.4em;
+  text-align: center;
+}
+.standard-button:focus,
+.major-button:focus,
+.standard-button:hover,
+.major-button:hover {
+  background: #69c9fd;
+}
+.standard-button:disabled,
+.major-button:disabled {
+  pointer-events: none;
+}
+.standard-button.full,
+.major-button.full {
+  display: block;
+  width: 100%;
+}
+.major-button {
+  background: #38b978;
+  font-weight: bold;
+}
+.major-button:focus,
+.major-button:hover {
+  background: #5acd93;
 }
