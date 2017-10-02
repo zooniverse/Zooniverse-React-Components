@@ -40,7 +40,11 @@ class Tutorial extends React.Component {
       if (!projectPreferences.preferences.tutorials_completed_at) {
         projectPreferences.preferences.tutorials_completed_at = {};
       };
-      projectPreferences.update(`preferences.tutorials_completed_at.${this.props.tutorial.id}`: now);
+      const obj = {};
+      projectPreferences.update((
+        obj["preferences.tutorials_completed_at." + this.props.tutorial.id] = now,
+        obj
+      ));
       projectPreferences.save();
     }
   }
