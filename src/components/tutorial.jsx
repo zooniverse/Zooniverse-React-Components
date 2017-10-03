@@ -40,11 +40,9 @@ class Tutorial extends React.Component {
       if (!projectPreferences.preferences.tutorials_completed_at) {
         projectPreferences.preferences.tutorials_completed_at = {};
       };
-      const obj = {};
-      projectPreferences.update((
-        obj["preferences.tutorials_completed_at." + this.props.tutorial.id] = now,
-        obj
-      ));
+      const changes = {};
+      changes[`preferences.tutorials_completed_at${this.props.tutorial.id}`] = now;
+      projectPreferences.update(changes);
       projectPreferences.save();
     }
   }
@@ -79,7 +77,7 @@ class Tutorial extends React.Component {
             <MediaCard key={step._key} className="tutorial-step" src={source}>
               <Markdown>{step.content}</Markdown>
               <hr />
-              <p style={{ textAlign: 'center' }}>
+              <p>
                 {button}
               </p>
             </MediaCard>

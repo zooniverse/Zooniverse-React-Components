@@ -2,7 +2,6 @@
 .media-icon-delete-button,
 .paginator .paginator-button,
 .step-through-direction,
-.modal-form-trigger,
 .modal-dialog-toolbar-button,
 .standard-button,
 .major-button {
@@ -23,14 +22,12 @@
 .paginator .paginator-button:disabled,
 .logout-button[data-disabled],
 .step-through-direction:disabled,
-.modal-form-trigger:disabled,
 .modal-dialog-toolbar-button:disabled,
 .standard-button:disabled,
 .major-button:disabled,
 .media-icon-delete-button[data-disabled],
 .paginator .paginator-button[data-disabled],
 .step-through-direction[data-disabled],
-.modal-form-trigger[data-disabled],
 .modal-dialog-toolbar-button[data-disabled],
 .standard-button[data-disabled],
 .major-button[data-disabled] {
@@ -42,7 +39,6 @@
 .media-icon-delete-button[data-busy]::after,
 .paginator .paginator-button[data-busy]::after,
 .step-through-direction[data-busy]::after,
-.modal-form-trigger[data-busy]::after,
 .modal-dialog-toolbar-button[data-busy]::after,
 .standard-button[data-busy]::after,
 .major-button[data-busy]::after {
@@ -413,6 +409,10 @@
   overflow-y: auto !important;
 }
 .tutorial-steps > .step-through-controls {
+  position: relative;
+  text-align: center;
+}
+.tutorial-steps .media-card.tutorial-step p {
   text-align: center;
 }
 .tutorial-steps .media-card.tutorial-step > .media-card-content {
@@ -460,15 +460,6 @@
 :checked + .step-through-pip-number {
   background: currentColor;
 }
-@media (max-width: 600px) {
-  .modal-form-trigger .site-nav__link strong {
-    display: inline-block;
-    max-width: 8.5em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    vertical-align: bottom;
-  }
-}
 .modal-form-underlay {
   background: rgba(128,128,128,0.2);
   z-index: 10;
@@ -515,39 +506,6 @@
 }
 .modal-dialog-toolbar-button:active {
   background: #000;
-}
-.standard-button,
-.major-button {
-  background: transparent;
-  border: 0;
-  color: inherit;
-  cursor: pointer;
-  display: inline-block;
-  font: inherit;
-  line-height: inherit;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  text-decoration: none;
-}
-.standard-button:disabled,
-.major-button:disabled,
-.standard-button[data-disabled],
-.major-button[data-disabled] {
-  cursor: inherit;
-  opacity: 0.3;
-  pointer-events: none;
-}
-.standard-button[data-busy]::after,
-.major-button[data-busy]::after {
-  animation: busy-button-animation 1s linear infinite alternate;
-  background: linear-gradient(90deg, rgba(128,128,128,0), rgba(128,128,128,0.2), rgba(128,128,128,0));
-  bottom: 0;
-  content: "";
-  left: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 .standard-button,
 .major-button {

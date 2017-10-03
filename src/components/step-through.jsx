@@ -64,7 +64,7 @@ class StepThrough extends Component {
   }
 
   handleScroll() {
-    const reactSwipeNode = ReactDOM.findDOMNode(this.swiper);
+    const reactSwipeNode = this.swiper;
     setTimeout(animatedScrollTo(reactSwipeNode, reactSwipeNode.offsetTop, 0), 500);
   }
 
@@ -105,7 +105,8 @@ class StepThrough extends Component {
           <button
             type="button"
             className="step-through-direction step-through-next"
-            aria-label="Next step" title="Next"
+            aria-label="Next step"
+            title="Next"
             disabled={this.state.step === childrenCount - 1}
             onClick={this.goNext}
           >
