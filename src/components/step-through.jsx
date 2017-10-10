@@ -74,7 +74,7 @@ class StepThrough extends Component {
     } else {
       const allSteps = Array.from(Array(childrenCount).keys());
       return (
-        <div className="step-through-controls" style={{position: 'relative'}}>
+        <div className="step-through-controls">
           <button
             type="button"
             className="step-through-direction step-through-previous"
