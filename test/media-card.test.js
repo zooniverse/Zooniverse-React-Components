@@ -6,8 +6,8 @@ import React from 'react';
 import sinon from 'sinon';
 import MediaCard from '../src/components/media-card';
 
-const imageSrc = 'https://www.test.png';
-const videoSrc = 'https://www.test.mp4';
+const imageSrc = 'test.png';
+const videoSrc = 'test.mp4';
 const children = <p>Tutorial Content</p>;
 
 describe('MediaCard', function() {
