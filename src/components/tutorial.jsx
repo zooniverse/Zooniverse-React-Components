@@ -94,10 +94,9 @@ Tutorial.checkIfCompleted = (tutorial, user, preferences) => {
     if (preferences && preferences.preferences && preferences.preferences.tutorials_completed_at && preferences.preferences.tutorials_completed_at[tutorial.id]) {
       return Promise.resolve(preferences.preferences.tutorials_completed_at[tutorial.id]);
     }
+    return Promise.resolve();
   } else {
-    if (completedThisSession[tutorial.id]) {
-      return Promise.resolve(completedThisSession[tutorial.id]);
-    }
+    return Promise.resolve(completedThisSession[tutorial.id]);
   }
 };
 
@@ -105,7 +104,7 @@ Tutorial.startIfNecessary = (self, tutorial, user, preferences) => {
   if (tutorial) {
     self.checkIfCompleted(tutorial, user, preferences).then((completed) => {
       if (!completed) {
-        self.start(tutorial, user, preferences);
+        self.start(self, tutorial, user, preferences);
       }
     });
   }
@@ -113,7 +112,7 @@ Tutorial.startIfNecessary = (self, tutorial, user, preferences) => {
 
 Tutorial.find = (workflow) => {
   if (workflow) {
-    apiClient.type('tutorials').get({ workflow_id: workflow.id })
+    return apiClient.type('tutorials').get({ workflow_id: workflow.id })
       .then((tutorials) => {
         const onlyStandardTutorials = tutorials.filter((tutorial) => {
           return tutorial.kind === 'tutorial' || null;
