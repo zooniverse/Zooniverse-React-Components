@@ -123,7 +123,7 @@ Tutorial.find = (workflow) => {
         return onlyStandardTutorials[0];
       })
   } else {
-    Promise.resolve()
+    return Promise.resolve(false)
   }
 }
 
