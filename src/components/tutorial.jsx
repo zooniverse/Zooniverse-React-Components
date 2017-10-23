@@ -96,7 +96,7 @@ Tutorial.checkIfCompleted = (tutorial, user, preferences) => {
     }
     return Promise.resolve(false);
   } else {
-    Promise.resolve(!!completedThisSession[tutorial.id]);
+    return Promise.resolve(!!completedThisSession[tutorial.id]);
   }
 };
 
