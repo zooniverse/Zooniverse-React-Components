@@ -92,14 +92,11 @@ Tutorial.checkIfCompleted = (tutorial, user, preferences) => {
   if (user) {
     window.prefs = preferences;
     if (preferences && preferences.preferences && preferences.preferences.tutorials_completed_at && preferences.preferences.tutorials_completed_at[tutorial.id]) {
-      return Promise.resolve(preferences.preferences.tutorials_completed_at[tutorial.id]);
+      return Promise.resolve(true);
     }
     return Promise.resolve(false);
   } else {
-    if (completedThisSession[tutorial.id]) {
-      return Promise.resolve(completedThisSession[tutorial.id]);
-    }
-    return Promise.resolve(false);
+    Promise.resolve(!!completedThisSession[tutorial.id]);
   }
 };
 
