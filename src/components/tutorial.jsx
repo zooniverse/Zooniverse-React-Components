@@ -15,6 +15,7 @@ if (window.tutorialsCompletedThisSession) {
 class Tutorial extends React.Component {
   componentWillMount() {
     this.previousActiveElement = document.activeElement;
+    this.handleNextClick = this.handleNextClick.bind(this);
   }
 
   componentWillUnmount() {
@@ -41,7 +42,7 @@ class Tutorial extends React.Component {
         projectPreferences.preferences.tutorials_completed_at = {};
       };
       const changes = {};
-      changes[`preferences.tutorials_completed_at${this.props.tutorial.id}`] = now;
+      changes[`preferences.tutorials_completed_at.${this.props.tutorial.id}`] = now;
       projectPreferences.update(changes);
       projectPreferences.save();
     }
