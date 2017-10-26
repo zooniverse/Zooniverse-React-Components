@@ -13,7 +13,9 @@ if (window.tutorialsCompletedThisSession) {
 }
 
 class Tutorial extends React.Component {
-  componentWillMount() {
+  constructor(props) {
+    super(props);
+
     this.previousActiveElement = document.activeElement;
     this.handleNextClick = this.handleNextClick.bind(this);
   }
