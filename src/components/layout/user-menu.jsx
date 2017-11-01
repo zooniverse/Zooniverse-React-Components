@@ -8,7 +8,7 @@ const UserMenu = (props) => {
   };
 
   return (
-    <Menu className="user-menu" label={props.user.display_name} dropAlign={{ right: 'right', top: 'top' }}>
+    <Menu className="zoo-header-menu" label={props.user.display_name} dropAlign={{ right: 'right', top: 'top' }}>
       {props.userMenuNavList.map((navItem, i) => {
         return createKeyedAnchorItem(navItem, i);
       })}
