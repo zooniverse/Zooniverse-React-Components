@@ -18,7 +18,7 @@
       margin: 0 0.5em 0 0
 
     &__icon
-      padding: 0
+      padding: 0 5px
       vertical-align: bottom
 
       .grommetux-control-icon
@@ -56,3 +56,12 @@
 
       &:hover, &:focus
         background-color: rgba(221, 221, 221, 0.5)
+
+.mobile-navigation-menu
+  @extends .zoo-header-menu
+
+.mobile-navigation-menu__drop
+  @extends .zoo-header-menu__drop
+
+  .grommetux-menu__control
+    padding-bottom: 19px
