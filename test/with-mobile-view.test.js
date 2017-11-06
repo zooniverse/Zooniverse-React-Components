@@ -6,20 +6,26 @@ import React from 'react';
 import { mount } from 'enzyme';
 import withMobileView from '../src/components/layout/with-mobile-view';
 
-// describe.('withMobileView', function() {
-//   let wrapper;
-//   before(function() {
-//     function MockComponent() {
-//       return (<div></div>);
-//     }
+describe('withMobileView', function() {
+  let wrapper;
+  before(function() {
+    function MockComponent() {
+      return (<div></div>);
+    }
 
-//     const component = withMobileView(MockComponent);
-//     wrapper = mount(component);
-//   });
+    const WrappedMockComponent = withMobileView(MockComponent);
+    wrapper = mount(<WrappedMockComponent />);
+  });
 
-//   it('renders without crashing', function() {});
+  it('renders without crashing', function() {});
 
-//   it('renders the MockComponent', function() {
-//     expect(wrapper.find('div')).to.have.lengthOf(1);
-//   });
-// });
+  it('renders the MockComponent', function() {
+    expect(wrapper.find('div')).to.have.lengthOf(1);
+  });
+
+  it('passes along props to child component', function() {
+    wrapper.setProps({ mockProp: true });
+    expect(wrapper.find('MockComponent').prop('mockProp')).to.be.true();
+    expect(wrapper.find('MockComponent').prop('isMobile')).to.be.false();
+  })
+});
