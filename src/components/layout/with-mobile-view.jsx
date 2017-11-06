@@ -30,13 +30,15 @@ export default function withMobileView(WrappedComponent) {
         clearTimeout(this._resizeTimeout);
       }
 
-      this._resizeTimeout = setTimeout(() => {
-        this.setState({
-          isMobile: innerWidth <= MAX_MOBILE_WIDTH
-        }, () => {
-          this._resizeTimeout = NaN;
-        });
-      }, 100);
+      if (window) {
+        this._resizeTimeout = setTimeout(() => {
+          this.setState({
+            isMobile: window.innerWidth <= MAX_MOBILE_WIDTH
+          }, () => {
+            this._resizeTimeout = NaN;
+          });
+        }, 100);
+      }
     }
 
     render() {

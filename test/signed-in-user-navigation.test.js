@@ -6,10 +6,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import SignedInUserNavigation from '../src/components/layout/signed-in-user-navigation';
 
+const userMenuNavList = [
+  <a href="#">a link</a>
+];
+
 describe('<SignedInUserNavigation />', function() {
   let wrapper;
   before(function() {
-    wrapper = shallow(<SignedInUserNavigation />);
+    wrapper = shallow(<SignedInUserNavigation userMenuNavList={userMenuNavList} />);
   });
 
   it('renders without crashing', function() {});

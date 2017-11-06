@@ -7,7 +7,7 @@ import Menu from 'grommet/components/Menu';
 import withMobileView from './with-mobile-view';
 import ZooniverseLogo from '../zooniverse-logo';
 
-function ZooHeader(props) {
+export function ZooHeader(props) {
   return (
     <Header justify="between" className="zoo-header" direction="row" size="small">
       <Menu align="center" direction="row" size="small" responsive={false} inline={true}>
