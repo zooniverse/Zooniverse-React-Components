@@ -2,8 +2,8 @@ import React from 'react';
 
 const MAX_MOBILE_WIDTH = 1080;
 
-export default function WithMobileView(WrappedComponent) {
-  return class extends React.Component {
+export default function withMobileView(WrappedComponent) {
+  class WithMobileView extends React.Component {
     constructor() {
       super();
 
@@ -17,11 +17,11 @@ export default function WithMobileView(WrappedComponent) {
     }
 
     componentDidMount() {
-      addEventListener('resize', this.handleResize);
+      if (window) window.addEventListener('resize', this.handleResize);
     }
 
     componentWillUnmount() {
-      removeEventListener('resize', this.handleResize);
+      if (window) window.removeEventListener('resize', this.handleResize);
       clearTimeout(this._resizeTimeout);
     }
 
@@ -43,4 +43,12 @@ export default function WithMobileView(WrappedComponent) {
       return <WrappedComponent isMobile={this.state.isMobile} {...this.props} />;
     }
   }
+
+  WithMobileView.displayName = `WithMobileView(${getDisplayName(WrappedComponent)})`;
+  return WithMobileView;
 }
+
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
+

@@ -4,9 +4,9 @@ import Anchor from 'grommet/components/Anchor';
 import Menu from 'grommet/components/Menu';
 import MenuIcon from 'grommet/components/icons/base/Menu';
 
-import WithMobileView from './with-mobile-view';
+import withMobileView from './with-mobile-view';
 
-function MobileNavigationMenu(props) {
+export function MobileNavigationMenu(props) {
   function createKeyedAnchorItem(navItem, i) {
     return (React.cloneElement(navItem, { key: `navItem-${i}` }));
   };
@@ -54,4 +54,4 @@ MobileNavigationMenu.propTypes = {
   mobileNavList: PropTypes.arrayOf(PropTypes.node).isRequired
 };
 
-export default WithMobileView(MobileNavigationMenu);
+export default withMobileView(MobileNavigationMenu);

@@ -23,7 +23,7 @@ export { default as SignedInUserNavigation } from './components/layout/signed-in
 export { default as SignedOutUserNavigation } from './components/layout/signed-out-user-navigation';
 export { default as UserMenu } from './components/layout/user-menu';
 export { default as UserNavigation } from './components/layout/user-navigation';
-export { default as WithMobileView } from './components/layout/with-mobile-view';
+export { default as withMobileView } from './components/layout/with-mobile-view';
 
 export { default as Tutorial } from './components/tutorial';
 export { default as MediaCard } from './components/media-card';

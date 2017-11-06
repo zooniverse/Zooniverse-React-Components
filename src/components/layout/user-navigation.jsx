@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Anchor from 'grommet/components/Anchor';
 import Menu from 'grommet/components/Menu';
 
-import WithMobileView from './with-mobile-view';
+import withMobileView from './with-mobile-view';
 
 const UserNavigation = (props) => {
   const messagesLabel = props.isMobile ?
@@ -49,4 +49,4 @@ UserNavigation.propTypes = {
   ]).isRequired
 };
 
-export default WithMobileView(UserNavigation);
+export default withMobileView(UserNavigation);

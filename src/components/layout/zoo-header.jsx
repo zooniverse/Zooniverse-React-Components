@@ -4,7 +4,7 @@ import Anchor from 'grommet/components/Anchor';
 import Header from 'grommet/components/Header';
 import Menu from 'grommet/components/Menu';
 
-import WithMobileView from './with-mobile-view';
+import withMobileView from './with-mobile-view';
 import ZooniverseLogo from '../zooniverse-logo';
 
 function ZooHeader(props) {
@@ -57,4 +57,4 @@ ZooHeader.propTypes = {
   mainHeaderNavList: PropTypes.arrayOf(PropTypes.node).isRequired
 };
 
-export default WithMobileView(ZooHeader);
+export default withMobileView(ZooHeader);
