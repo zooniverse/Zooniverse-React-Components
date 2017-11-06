@@ -6,15 +6,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import SignedOutUserNavigation from '../src/components/layout/signed-out-user-navigation';
 
-describe.only('<SignedOutUserNavigation />', function() {
+describe('<SignedOutUserNavigation />', function() {
   let wrapper;
   before(function() {
     wrapper = shallow(<SignedOutUserNavigation />);
   });
 
-  it('renders without crashing', function() {
-    const wrapper = shallow(<SignedOutUserNavigation />)
-  });
+  it('renders without crashing', function() {});
 
   it('renders components LoginButton and MobileNavigationMenu', function() {
     expect(wrapper.find('LoginButton')).to.have.lengthOf(1);

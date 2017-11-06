@@ -5,7 +5,7 @@ import Menu from 'grommet/components/Menu';
 
 import withMobileView from './with-mobile-view';
 
-const UserNavigation = (props) => {
+export function UserNavigation(props) {
   const messagesLabel = props.isMobile ?
     <i className="fa fa-bell-o fa-fw" aria-hidden="true" aria-label={props.messagesLabel} /> :
     props.messagesLabel;

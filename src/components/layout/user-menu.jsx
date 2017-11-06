@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Menu from 'grommet/components/Menu';
 
-const UserMenu = (props) => {
+export default function UserMenu(props) {
   const createKeyedAnchorItem = (navItem, i) => {
     return (React.cloneElement(navItem, { key: `navItem-${i}` }));
   };
@@ -29,5 +29,3 @@ UserMenu.propTypes = {
     PropTypes.string
   ])).isRequired
 };
-
-export default UserMenu;
