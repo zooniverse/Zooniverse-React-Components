@@ -10,12 +10,12 @@ function SignedInUserNavigation(props) {
     <div>
       <UserNavigation
         messagesLabel={props.messagesLabel}
-        messagesLink={props.messageLink}
+        messagesLink={props.messagesLink}
         notificationsLabel={props.notificationsLabel}
         notificationsLink={props.notificationsLink}
       />
       <UserMenu user={props.user} userMenuNavList={props.userMenuNavList} />
-      <MobileNavigationMenu isAdmin={props.isAdmin} />
+      <MobileNavigationMenu isAdmin={props.isAdmin} mobileNavList={props.mobileNavList} />
     </div>
   );
 }
