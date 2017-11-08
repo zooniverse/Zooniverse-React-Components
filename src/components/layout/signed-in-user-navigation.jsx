@@ -15,7 +15,7 @@ function SignedInUserNavigation(props) {
         notificationsLink={props.notificationsLink}
       />
       <UserMenu user={props.user} userMenuNavList={props.userMenuNavList} />
-      <MobileNavigationMenu isAdmin={props.isAdmin} mobileNavList={props.mobileNavList} />
+      <MobileNavigationMenu adminNavLink={props.adminNavLink} isAdmin={props.isAdmin} mobileNavList={props.mobileNavList} />
     </div>
   );
 }

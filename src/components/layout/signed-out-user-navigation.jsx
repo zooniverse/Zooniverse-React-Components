@@ -18,7 +18,7 @@ export default function SignedOutUserNavigation(props) {
           onClose={props.toggleModal}
           showOauthModal={props.showOauthModal}
         />}
-      <MobileNavigationMenu mobileNavList={props.mobileNavList} />
+      <MobileNavigationMenu adminNavLink={props.adminNavLink} mobileNavList={props.mobileNavList} />
     </div>
   );
 }
