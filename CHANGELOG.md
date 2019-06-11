@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.7.3] 2019-06-11
+### Fixed
+- Dependency security patches
+
+## [0.7.2] 2019-06-07
+### Fixed
+- Dependency security patches
+
 ## [0.7.1] 2018-01-02
 ### Fixed
 - Only show the Google sign in button if props.loginWithGoogle function is defined
