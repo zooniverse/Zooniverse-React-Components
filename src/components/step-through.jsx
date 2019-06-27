@@ -20,12 +20,12 @@ class StepThrough extends Component {
   }
 
   componentDidMount() {
-    addEventListener('keydown', this.handleKeyDown);
-    this.swiper.swipe.setup();
+    document.addEventListener('keydown', this.handleKeyDown);
+    this.swiper && this.swiper.swipe.setup();
   }
 
   componentWillUnmount() {
-    removeEventListener('keydown', this.handleKeyDown);
+    document.removeEventListener('keydown', this.handleKeyDown);
   }
 
   goPrevious() {
