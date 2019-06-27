@@ -32,7 +32,8 @@
     "babel-preset-react": "^6.24.1",
     "chai": "^4.2.0",
     "dirty-chai": "^2.0.1",
-    "enzyme": "^2.6.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "~1.9.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.17.3",
@@ -40,7 +41,7 @@
     "eslint-plugin-react": "^7.13.0",
     "jsdom": "^11.1.0",
     "mocha": "^6.1.4",
-    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.2.0",
     "sinon": "^1.17.6",
     "stylus": "^0.54.5"
   },
@@ -49,13 +50,13 @@
     "data-uri-to-blob": "0.0.4",
     "grommet": "^1.8.2",
     "markdownz": "^7.6.5",
-    "modal-form": "^2.8.0",
+    "modal-form": "^2.9.0",
     "panoptes-client": "^2.12.2",
     "prop-types": "~15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-select": "^1.0.0-rc.5",
-    "react-swipe": "^5.0.8"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-select": "1.0.0-rc.10",
+    "react-swipe": "^6.0.4"
   },
   "engines": {
     "node": "^8.1.2",
