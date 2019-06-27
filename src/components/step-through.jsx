@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import ReactSwipe from 'react-swipe';
 import animatedScrollTo from 'animated-scrollto';
 
@@ -141,7 +142,7 @@ class StepThrough extends Component {
 }
 
 StepThrough.propTypes = {
-  defaultStep: React.PropTypes.number,
+  defaultStep: PropTypes.number,
 }
 
 StepThrough.defaultProps = {
