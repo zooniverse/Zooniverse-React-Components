@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import ReactSwipe from 'react-swipe';
 import animatedScrollTo from 'animated-scrollto';
 
@@ -19,12 +20,12 @@ class StepThrough extends Component {
   }
 
   componentDidMount() {
-    addEventListener('keydown', this.handleKeyDown);
-    this.swiper.swipe.setup();
+    document.addEventListener('keydown', this.handleKeyDown);
+    this.swiper && this.swiper.swipe.setup();
   }
 
   componentWillUnmount() {
-    removeEventListener('keydown', this.handleKeyDown);
+    document.removeEventListener('keydown', this.handleKeyDown);
   }
 
   goPrevious() {
@@ -141,7 +142,7 @@ class StepThrough extends Component {
 }
 
 StepThrough.propTypes = {
-  defaultStep: React.PropTypes.number,
+  defaultStep: PropTypes.number,
 }
 
 StepThrough.defaultProps = {

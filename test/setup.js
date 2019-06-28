@@ -4,6 +4,12 @@ import React from 'react';
 import chai from 'chai';
 import dirtyChai from 'dirty-chai';
 import { JSDOM } from 'jsdom';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({
+  adapter: new Adapter()
+});
 
 
 chai.use(dirtyChai);

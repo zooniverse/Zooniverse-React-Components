@@ -57,7 +57,7 @@ describe('Paginator', function() {
   describe('with className prop provided', function() {
     it('should reflect className\'s styling', function() {
       const wrapper = mount(<Paginator className="customStyle" />);
-      expect(wrapper.find('.customStyle')).to.have.length(1);
+      expect(wrapper.find('div.customStyle')).to.have.length(1);
     });
   });
 
