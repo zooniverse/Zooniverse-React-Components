@@ -53,7 +53,7 @@
     "grommet": "^1.8.2",
     "markdownz": "^7.6.5",
     "modal-form": "^2.9.0",
-    "panoptes-client": "^2.12.2",
+    "panoptes-client": "^3.0.0-rc.0",
     "prop-types": "~15.5.10",
     "react-select": "1.0.0-rc.10",
     "react-swipe": "^6.0.4"
