@@ -1,6 +1,11 @@
+/* eslint-disable no-restricted-globals */
 import React from 'react';
 
 const MAX_MOBILE_WIDTH = 1080;
+
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
 
 export default function withMobileView(WrappedComponent) {
   class WithMobileView extends React.Component {
@@ -9,7 +14,7 @@ export default function withMobileView(WrappedComponent) {
 
       this.state = {
         isMobile: false
-      }
+      };
 
       this._resizeTimeout = NaN;
       this.handleResize = this.handleResize.bind(this);
@@ -42,15 +47,11 @@ export default function withMobileView(WrappedComponent) {
     }
 
     render() {
-      return <WrappedComponent isMobile={this.state.isMobile} {...this.props} />;
+      const { isMobile } = this.state;
+      return <WrappedComponent isMobile={isMobile} {...this.props} />;
     }
   }
 
   WithMobileView.displayName = `WithMobileView(${getDisplayName(WrappedComponent)})`;
   return WithMobileView;
 }
-
-function getDisplayName(WrappedComponent) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
-}
-

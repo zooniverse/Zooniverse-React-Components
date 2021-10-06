@@ -10,7 +10,7 @@ function parseQuery() {
   return params;
 }
 
-export default function(router, queryChange) {
+export default function updateQueryParams(router, queryChange) {
   const nextQuery = Object.assign({ }, parseQuery(), queryChange);
   return router.push({
     pathname: window.location.pathname,
