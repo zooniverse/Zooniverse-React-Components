@@ -1,7 +1,7 @@
 Zooniverse-React-Components
 ===========================
 
-Build works against Node 8 and NPM 5.
+Build works against Node 14 and NPM 7.
 
 What the repo name says
 
