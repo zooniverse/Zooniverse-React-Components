@@ -13,7 +13,20 @@ Any default styles can be added as a stylus file in `src/css`.
 
 `npm version [semver new version]` will run helper preversion and postversion scripts. `preversion` will run the tests. `version` will run `npm run build` which will build the production css and js. `postversion` will push the updated repo and the updated git tag to github.
 
-For now, we will git tag and install via github. 
+For now, we will git tag and install via github.
+Known dependents:
+
+- Active
+  - [anti-slavery-manuscripts](https://github.com/zooniverse/anti-slavery-manuscripts)
+  - [classroom](https://github.com/zooniverse/classroom)
+  - [notes-from-nature-field-book](https://github.com/zooniverse/notes-from-nature-field-book)
+  - [pfe-lab](https://github.com/zooniverse/pfe-lab)
+  - [scribes-of-the-cairo-geniza](https://github.com/zooniverse/scribes-of-the-cairo-geniza)
+
+- Archived
+  - ancient-lives-frontend
+  - autumnwatch-2017-birdmap
+  - zoo-reduxify
 
 `npm test` to run mocha tests
 
