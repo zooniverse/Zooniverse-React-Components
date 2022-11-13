@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/zooniverse/Zooniverse-React-Components",
   "devDependencies": {
-    "@babel/cli": "^7.15.7",
+    "@babel/cli": "^7.19.3",
     "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "^7.15.7",
     "@babel/preset-env": "^7.14.4",
