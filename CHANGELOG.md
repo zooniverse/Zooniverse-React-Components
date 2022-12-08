@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.10.3]
+### Updated
+- removed source code and tests from the published package.
+
 ## [0.10.2]
 ### Updated
 - Bump `panoptes-client` to 4.2.6.
