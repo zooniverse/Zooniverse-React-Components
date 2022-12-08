@@ -1,0 +1,7 @@
+.babelrc
+.editorconfig
+.eslintrc
+.github/
+example/
+src/
+test/
