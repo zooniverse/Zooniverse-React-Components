@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.10.5]
+### Updated
+- bump `markdownz` to 7.10.0.
+- bump `mocha` to 10.2.0.
+
 ## [0.10.4]
 ### Updated
 - bump `panoptes-client` to 4.2.7.
