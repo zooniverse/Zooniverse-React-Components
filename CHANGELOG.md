@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.10.6]
+### Updated
+* Bump eslint from 8.29.0 to 8.30.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/143
+* Bump markdownz from 7.10.0 to 7.10.1 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/144
+* Bump @babel/core from 7.20.5 to 7.20.7 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/146
+* Bump @babel/cli from 7.19.3 to 7.20.7 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/147
+* Bump eslint from 8.30.0 to 8.31.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/148
+
 ## [0.10.5]
 ### Updated
 - bump `markdownz` to 7.10.0.
