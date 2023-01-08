@@ -2,11 +2,13 @@
   "name": "zooniverse-react-components",
   "version": "0.10.6",
   "description": "Zooniverse-React-Components ===========================",
-  "main": "lib/index.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
   "scripts": {
     "start": "echo 'Nothing to see here yet'",
-    "build": "rm -rf lib && npm run build-js && npm run build-css",
-    "build-js": "babel src --out-dir lib",
+    "build": "rm -rf lib && npm run build:cjs && npm run build:esm && npm run build-css",
+    "build:cjs": "babel src --out-dir lib/cjs",
+    "build:esm": "BABEL_ENV=es6 babel src --out-dir lib/esm",
     "build-css": "stylus src/css/zooniverse-react-components.styl --out lib",
     "test": "mocha --reporter nyan --require @babel/register test/setup.js test/*.test.js",
     "lint": "eslint src",
@@ -42,8 +44,8 @@
     "eslint-plugin-react": "^7.31.10",
     "jsdom": "^20.0.3",
     "mocha": "^10.1.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-test-renderer": "^16.2.0",
     "sinon": "^1.17.6",
     "stylus": "^0.59.0"
@@ -60,11 +62,11 @@
     "react-swipe": "^6.0.4"
   },
   "peerDependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "engines": {
-    "node": ">=14",
-    "npm": ">=7"
+    "node": ">=16",
+    "npm": ">=8"
   }
 }
