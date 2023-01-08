@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.11.0]
+## What's Changed
+- requires React 16.14 and the automatic runtime.
+- adds an ESM build for browsers that support ES modules.
+
+* Bump @babel/core from 7.20.7 to 7.20.12 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/149
+* Bump markdownz from 7.10.1 to 8.0.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/150
+* Add an ESM build by @eatyourgreens in https://github.com/zooniverse/Zooniverse-React-Components/pull/151
+
+
 ## [0.10.6]
 ### Updated
 * Bump eslint from 8.29.0 to 8.30.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/143
