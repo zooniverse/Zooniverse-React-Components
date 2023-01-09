@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.11.1]
+- Explicitly require React 16.14.
+
+## What's Changed
+* Bump jsdom from 20.0.3 to 21.0.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/152
+* Bump react-test-renderer from 16.13.1 to 16.14.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/153
+
 ## [0.11.0]
 ## What's Changed
 - requires React 16.14 and the automatic runtime.
