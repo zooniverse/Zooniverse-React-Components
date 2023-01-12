@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.11.2]
+- Markdownz 8.0.1, to fix broken Twitter emoji URLs.
+
 ## [0.11.1]
 - Explicitly require React 16.14.
 
