@@ -1,11 +1,11 @@
 Zooniverse-React-Components
 ===========================
 
-Build works against Node 14 and NPM 7.
+Build works against Node 16 and NPM 8.
 
 What the repo name says
 
-`npm i` to install dependencies
+`npm ci` to install dependencies
 
 Components should be added to the `src/components` folder and an export to `src/index.js`
 
