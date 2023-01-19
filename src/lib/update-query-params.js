@@ -11,7 +11,7 @@ function parseQuery() {
 }
 
 export default function updateQueryParams(router, queryChange) {
-  const nextQuery = Object.assign({ }, parseQuery(), queryChange);
+  const nextQuery = { ...parseQuery(), ...queryChange };
   return router.push({
     pathname: window.location.pathname,
     query: nextQuery,
