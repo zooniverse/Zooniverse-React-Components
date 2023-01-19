@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.11.3]
+- Panoptes JavaScript Client 4.2.8, with superagent 8.0.8
+- ESLint updates.
+
 ## [0.11.2]
 - Markdownz 8.0.1, to fix broken Twitter emoji URLs.
 
