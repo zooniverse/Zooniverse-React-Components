@@ -1,6 +1,6 @@
 {
   "name": "zooniverse-react-components",
-  "version": "0.11.3",
+  "version": "0.12.0",
   "description": "Zooniverse-React-Components ===========================",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
