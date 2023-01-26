@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.0]
+
+Panoptes JS Client 5, including a rebuilt JSON-API client and new Sugar client.
+Fixes for broken Twitter emoji in Markdownz.
+
+* Bump jsdom from 21.0.0 to 21.1.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/164
+* Bump panoptes-client from 4.2.8 to 5.0.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/163
+* Update README.md by @mcbouslog in https://github.com/zooniverse/Zooniverse-React-Components/pull/165
+* Bump panoptes-client from 5.0.0 to 5.1.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/167
+* Bump markdownz from 8.0.1 to 8.0.2 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/166
+* Bump panoptes-client from 5.1.0 to 5.2.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/168
+
 ## [0.11.3]
 - Panoptes JavaScript Client 4.2.8, with superagent 8.0.8
 - ESLint updates.
