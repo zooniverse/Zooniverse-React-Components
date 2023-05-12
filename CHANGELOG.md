@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.1]
+
+Dependency updates.
+
+* Bump eslint-plugin-react from 7.32.1 to 7.32.2 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/169
+* Bump eslint from 8.32.0 to 8.33.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/170
+* Bump panoptes-client from 5.2.0 to 5.2.1 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/171
+* Bump eslint from 8.33.0 to 8.34.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/173
+* Bump @babel/register from 7.18.9 to 7.21.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/175
+* Bump panoptes-client from 5.2.1 to 5.2.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/176
+* Bump eslint from 8.34.0 to 8.35.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/177
+* Bump @babel/cli from 7.20.7 to 7.21.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/180
+* Bump markdownz from 8.0.2 to 8.0.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/179
+* Bump @babel/core from 7.20.12 to 7.21.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/178
+* Bump eslint from 8.35.0 to 8.36.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/181
+* Bump jsdom from 21.1.0 to 21.1.1 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/183
+* Bump @babel/core from 7.21.0 to 7.21.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/184
+* Bump @babel/eslint-parser from 7.19.1 to 7.21.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/185
+* Bump panoptes-client from 5.2.3 to 5.2.4 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/186
+* Bump @babel/core from 7.21.3 to 7.21.4 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/190
+* Bump @babel/preset-env from 7.20.2 to 7.21.4 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/191
+* Build and test with Node 18 by @eatyourgreens in https://github.com/zooniverse/Zooniverse-React-Components/pull/172
+* Bump @babel/cli from 7.21.0 to 7.21.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/194
+* Bump @babel/core from 7.21.4 to 7.21.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/193
+* Bump @babel/core from 7.21.5 to 7.21.8 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/197
+* Bump eslint from 8.36.0 to 8.40.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/196
+* Bump @babel/eslint-parser from 7.21.3 to 7.21.8 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/198
+
 ## [0.12.0]
 
 Panoptes JS Client 5, including a rebuilt JSON-API client and new Sugar client.
