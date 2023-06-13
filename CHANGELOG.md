@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.2]
+
+Dependency updates.
+
+* Bump @babel/preset-env from 7.21.4 to 7.21.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/200
+* Bump jsdom from 21.1.1 to 22.0.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/201
+* Bump panoptes-client from 5.2.4 to 5.2.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/202
+* Bump markdownz from 8.0.3 to 8.0.4 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/205
+* Bump panoptes-client from 5.2.5 to 5.2.6 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/207
+* Bump eslint from 8.40.0 to 8.41.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/206
+* Bump jsdom from 22.0.0 to 22.1.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/208
+* Bump @babel/core from 7.21.8 to 7.22.1 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/209
+* Bump @babel/preset-react from 7.18.6 to 7.22.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/210
+* Bump panoptes-client from 5.2.6 to 5.3.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/212
+* Bump @babel/preset-env from 7.21.5 to 7.22.4 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/213
+* Bump eslint from 8.41.0 to 8.42.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/214
+* Bump @babel/register from 7.21.0 to 7.22.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/218
+* Bump @babel/preset-react from 7.22.3 to 7.22.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/216
+* Bump @babel/core from 7.22.1 to 7.22.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/217
+
 ## [0.12.1]
 
 Dependency updates.
