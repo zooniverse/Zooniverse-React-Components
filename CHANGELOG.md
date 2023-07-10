@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.3]
+
+Dependency updates.
+
+* Bump eslint from 8.42.0 to 8.43.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/219
+* Bump @babel/eslint-parser from 7.21.8 to 7.22.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/220
+* Bump @babel/preset-env from 7.22.4 to 7.22.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/222
+* Bump markdownz from 8.0.4 to 8.0.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/223
+* Bump @babel/cli from 7.21.5 to 7.22.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/225
+* Bump eslint from 8.43.0 to 8.44.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/226
+* Bump tough-cookie from 4.1.2 to 4.1.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/227
+* Bump panoptes-client from 5.3.0 to 5.5.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/228
+* Bump @babel/preset-env from 7.22.5 to 7.22.7 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/229
+* Bump @babel/core from 7.22.5 to 7.22.8 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/230
+
 ## [0.12.2]
 
 Dependency updates.
