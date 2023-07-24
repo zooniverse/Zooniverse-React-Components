@@ -53,7 +53,7 @@
   "dependencies": {
     "animated-scrollto": "^1.1.0",
     "data-uri-to-blob": "0.0.4",
-    "grommet": "^1.8.2",
+    "grommet": "^2.33.1",
     "markdownz": "^8.0.1",
     "modal-form": "^2.9.1",
     "panoptes-client": "^5.0.0",
