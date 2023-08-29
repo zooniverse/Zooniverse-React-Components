@@ -4,6 +4,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.4]
+
+Dependency updates
+
+* Bump semver from 5.7.1 to 5.7.2 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/231
+* Bump eslint from 8.44.0 to 8.45.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/232
+* Bump markdownz from 8.0.5 to 8.0.6 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/233
+* Bump @babel/preset-env from 7.22.7 to 7.22.9 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/235
+* Bump @babel/core from 7.22.8 to 7.22.9 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/238
+* Bump eslint-plugin-react from 7.32.2 to 7.33.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/237
+* Bump @babel/cli from 7.22.5 to 7.22.9 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/241
+* Bump @babel/eslint-parser from 7.22.5 to 7.22.9 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/240
+* Bump eslint-plugin-react from 7.33.0 to 7.33.1 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/239
+* Bump eslint from 8.45.0 to 8.46.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/242
+* Bump eslint-plugin-import from 2.27.5 to 2.28.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/243
+* Bump @babel/cli from 7.22.9 to 7.22.10 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/244
+* Bump @babel/core from 7.22.9 to 7.22.10 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/245
+* Bump @babel/eslint-parser from 7.22.9 to 7.22.10 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/246
+* Bump eslint-plugin-react from 7.33.1 to 7.33.2 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/247
+* Bump eslint-plugin-import from 2.28.0 to 2.28.1 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/248
+* Bump panoptes-client from 5.5.3 to 5.5.4 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/249
+* Bump chai from 4.3.7 to 4.3.8 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/250
+* Bump panoptes-client from 5.5.4 to 5.5.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/251
+* Bump eslint from 8.46.0 to 8.48.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/252
+* Bump @babel/core from 7.22.10 to 7.22.11 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/253
+* Bump @babel/eslint-parser from 7.22.10 to 7.22.11 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/254
+* Bump @babel/preset-env from 7.22.9 to 7.22.10 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/255
+* Bump markdownz from 8.0.6 to 8.0.7 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/256
+
+
+**Full Changelog**: https://github.com/zooniverse/Zooniverse-React-Components/compare/v0.12.3...v0.12.4
+
 ## [0.12.3]
 
 Dependency updates.
