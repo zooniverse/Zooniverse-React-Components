@@ -48,7 +48,7 @@
     "react-dom": "^16.14.0",
     "react-test-renderer": "^16.2.0",
     "sinon": "^1.17.6",
-    "stylus": "^0.59.0"
+    "stylus": "^0.60.0"
   },
   "dependencies": {
     "animated-scrollto": "^1.1.0",
