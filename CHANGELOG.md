@@ -4,9 +4,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.5]
+
+Dependency updates.
+
+* Bump stylus from 0.59.0 to 0.60.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/257
+* Bump @babel/preset-env from 7.22.10 to 7.22.14 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/258
+* Bump @babel/preset-react from 7.22.5 to 7.22.15 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/259
+* Bump @babel/eslint-parser from 7.22.11 to 7.22.15 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/260
+* Bump @babel/cli from 7.22.10 to 7.22.15 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/261
+* Bump @babel/core from 7.22.11 to 7.22.17 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/263
+* Bump panoptes-client from 5.5.5 to 5.5.6 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/268
+* Bump eslint from 8.48.0 to 8.49.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/267
+* Bump @babel/preset-env from 7.22.14 to 7.22.20 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/265
+* Bump @babel/register from 7.22.5 to 7.22.15 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/264
+* Bump eslint from 8.49.0 to 8.50.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/269
+* Bump @babel/core from 7.22.17 to 7.22.20 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/271
+* Bump markdownz from 8.0.7 to 8.1.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/270
+* Bump @babel/cli from 7.22.15 to 7.23.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/273
+* Bump @babel/core from 7.22.20 to 7.23.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/274
+* Bump chai from 4.3.8 to 4.3.10 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/275
+
+
+**Full Changelog**: https://github.com/zooniverse/Zooniverse-React-Components/compare/v0.12.4...v0.12.5
+
 ## [0.12.4]
 
-Dependency updates
+Dependency updates.
 
 * Bump semver from 5.7.1 to 5.7.2 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/231
 * Bump eslint from 8.44.0 to 8.45.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/232
