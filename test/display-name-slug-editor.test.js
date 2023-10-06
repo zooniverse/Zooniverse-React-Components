@@ -61,17 +61,18 @@ describe('<DisplayNameSlugEditor />', function() {
   });
 
   describe('component lifecycle', function() {
-    const getResourceUrlSpy = sinon.spy(DisplayNameSlugEditor.prototype, 'getResourceUrl');
+    let getResourceUrlSpy;
 
     const origin = 'https://www.test.com';
 
     before(function() {
+      getResourceUrlSpy = sinon.spy(DisplayNameSlugEditor.prototype, 'getResourceUrl');
       wrapper = mount(<DisplayNameSlugEditor origin={origin} resource={resource} resourceType="project" />);
     });
 
     describe('componentDidMount', function() {
       after(function() {
-        getResourceUrlSpy.reset();
+        getResourceUrlSpy.resetHistory();
       });
 
       it('should call getResourceUrl', function() {
@@ -117,9 +118,10 @@ describe('<DisplayNameSlugEditor />', function() {
     let button;
     const onChangeSpy = sinon.spy(DisplayNameSlugEditor.prototype, 'handleInputChange');
     const undoNameChangeSpy = sinon.spy(DisplayNameSlugEditor.prototype, 'undoNameChange');
-    const warnURLChangeSpy = sinon.spy(DisplayNameSlugEditor.prototype, 'warnURLChange');
+    let warnURLChangeSpy; 
 
     before(function() {
+      warnURLChangeSpy = sinon.spy(DisplayNameSlugEditor.prototype, 'warnURLChange');
       wrapper = mount(<DisplayNameSlugEditor resource={resource} resourceType="project" />);
       input = wrapper.find('input[type="text"]');
       value = 'Lorem ipsum';
@@ -136,7 +138,7 @@ describe('<DisplayNameSlugEditor />', function() {
       expect(warnURLChangeSpy.calledOnce).to.be.true;
       expect(warnURLChangeSpy.calledWith(resource, value)).to.be.true;
       expect(warnURLChangeSpy.calledAfter(onChangeSpy)).to.be.true;
-      warnURLChangeSpy.reset();
+      warnURLChangeSpy.resetHistory();
     });
 
     it('warns the user about URL changes', function() {
@@ -159,7 +161,7 @@ describe('<DisplayNameSlugEditor />', function() {
       input.simulate('change', { target: { value: 'a new name' }});
       expect(warnURLChangeSpy.calledOnce).to.be.true;
       expect(wrapper.state().warn).to.be.false;
-      warnURLChangeSpy.reset();
+      warnURLChangeSpy.resetHistory();
     });
 
     it('does not warn the user about URL changes if the slug includes "untitled-organization"', function() {
