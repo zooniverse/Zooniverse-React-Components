@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12.7]
+
+Dependency updates.
+
+* Bump markdownz from 8.1.4 to 8.2.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/278
+* Bump sinon from 1.17.7 to 16.1.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/279
+
+
+**Full Changelog**: https://github.com/zooniverse/Zooniverse-React-Components/compare/v0.12.6...v0.12.7
+
 ## [0.12.6]
 
 Bump markdownz.
