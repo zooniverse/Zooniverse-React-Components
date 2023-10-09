@@ -4,6 +4,7 @@
   "description": "Zooniverse-React-Components ===========================",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
+  "sideEffects": false,
   "scripts": {
     "start": "echo 'Nothing to see here yet'",
     "build": "rm -rf lib && npm run build:cjs && npm run build:esm && npm run build-css",
