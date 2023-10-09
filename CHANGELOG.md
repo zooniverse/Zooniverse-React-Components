@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.13.0]
+
+[Security] Override markdown-it to v13 and superagent to v8, so that we're always using the latest version of both packages.
+
+**Full Changelog**: https://github.com/zooniverse/Zooniverse-React-Components/compare/v0.12.9...v0.13.0
+
 ## [0.12.9]
 
 Mark package as free of side effects.
