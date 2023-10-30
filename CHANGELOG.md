@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.13.2]
+
+Bump `markdownz` to 8.5.0.
+
+**Full Changelog**: https://github.com/zooniverse/Zooniverse-React-Components/compare/v0.13.1...v0.13.2
+
 ## [0.13.1]
 
 Dependency updates.
