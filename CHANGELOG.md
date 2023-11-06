@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.14.0]
+
+- Bump `markdownz` to 9.1.
+- Bugfix for the Sugar client.
+- Build on Node 20.
+
+* Bump sinon from 17.0.0 to 17.0.1 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/290
+* Bump eslint-plugin-jsx-a11y from 6.7.1 to 6.8.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/291
+* Bump markdownz from 8.5.0 to 9.1.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/292
+* Bump panoptes-client from 5.5.6 to 5.5.7 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/294
+* Bump eslint from 8.52.0 to 8.53.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/295
+* Bump stylus from 0.60.0 to 0.61.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/296
+* Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/297
+* Bump markdownz from 9.1.3 to 9.1.4 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/299
+* Bump actions/setup-node from 3 to 4 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/298
+
+
+**Full Changelog**: https://github.com/zooniverse/Zooniverse-React-Components/compare/v0.13.2...v0.14.0
+
 ## [0.13.2]
 
 Bump `markdownz` to 8.5.0.
