@@ -30,3 +30,11 @@ If you're using `npm link` to test the library with your app, then you may need 
   ]
 }
 ```
+
+## Publishing
+
+1. Add the new version to the changelog.
+2. `npm version major|minor|patch` to test, build, and push a new tagged version. https://github.com/zooniverse/Zooniverse-React-Components/blob/3b9a027132e85480b6882fa53129186ef4a128a1/package.json#L16-L19
+3. Publish the new tag as a release on GitHub.
+4. `npm publish --dry-run` to double-check the release.
+5. `npm publish`.
