@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.14.1]
+
+## What's Changed
+* Bump @babel/eslint-parser from 7.22.15 to 7.23.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/300
+* Bump panoptes-client from 5.5.7 to 5.5.8 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/301
+* Bump @babel/preset-react from 7.22.15 to 7.23.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/305
+* Bump @babel/core from 7.23.2 to 7.23.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/304
+* Bump @babel/preset-env from 7.23.2 to 7.23.3 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/303
+* Bump markdownz from 9.1.4 to 9.1.5 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/307
+
+
+**Full Changelog**: https://github.com/zooniverse/Zooniverse-React-Components/compare/v0.14.0...v0.14.1
+
 ## [0.14.0]
 
 - Bump `markdownz` to 9.1.
