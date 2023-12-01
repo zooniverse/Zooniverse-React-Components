@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.14.2]
+
+* [Security] Bump @adobe/css-tools from 4.3.1 to 4.3.2 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/312
+
 ## [0.14.1]
 
 ## What's Changed
