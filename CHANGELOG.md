@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 * Bump jsdom from 22.1.0 to 23.0.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/311
 * [Security] Bump @adobe/css-tools from 4.3.1 to 4.3.2 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/312
 
+
+**Full Changelog**: https://github.com/zooniverse/Zooniverse-React-Components/compare/v0.14.1...v0.14.2
+
 ## [0.14.1]
 
 ## What's Changed
