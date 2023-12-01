@@ -6,7 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.14.2]
 
+* Bump eslint from 8.53.0 to 8.54.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/308
+* Bump stylus from 0.61.0 to 0.62.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/309
+* Bump @babel/cli from 7.23.0 to 7.23.4 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/310
+* Bump jsdom from 22.1.0 to 23.0.0 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/311
 * [Security] Bump @adobe/css-tools from 4.3.1 to 4.3.2 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/312
+
+
+**Full Changelog**: https://github.com/zooniverse/Zooniverse-React-Components/compare/v0.14.1...v0.14.2
 
 ## [0.14.1]
 
