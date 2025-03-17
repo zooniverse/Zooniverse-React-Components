@@ -4,19 +4,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.14.3]
-
-* Update changelog with v0.14.2 dependency updates by @mcbouslog in https://github.com/zooniverse/Zooniverse-React-Components/pull/314
-* Bump dompurify from 3.0.6 to 3.1.7 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/331
-* Bump markdownz from 9.1.5 to 9.1.8 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/344
-* Bump panoptes-client from 5.5.8 to 5.6.2 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/334
-* Bump serialize-javascript and mocha by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/345
-* Bump @babel/preset-env from 7.23.3 to 7.26.9 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/347
-* Bump @babel/core from 7.23.3 to 7.26.9 by @dependabot in https://github.com/zooniverse/Zooniverse-React-Components/pull/346
-* Update dependencies - Mar 2025 edition #353 by @shaunanoordin in https://github.com/zooniverse/Zooniverse-React-Components/pull/353
-
-
-**Full Changelog**: https://github.com/zooniverse/Zooniverse-React-Components/compare/v0.14.2...v0.14.3
 
 ## [0.14.2]
 
